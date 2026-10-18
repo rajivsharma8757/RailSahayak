@@ -1,0 +1,46 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: railsahayak-backend
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      PORT: 8081
+      DB_URL: jdbc:postgresql://postgres:5432/railsahayak
+      DB_USERNAME: railsahayak
+      DB_PASSWORD: railsahayak_dev_only
+      DEMO_PASSENGER_PASSWORD: ${DEMO_PASSENGER_PASSWORD:-PassengerDemo123!}
+      DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-AdminDemo123!}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8081/api/v1/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: railsahayak-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: railsahayak
+      POSTGRES_USER: railsahayak
+      POSTGRES_PASSWORD: railsahayak_dev_only
+    ports:
+      - "5432:5432"
+    volumes:
+      - railsahayak_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U railsahayak -d railsahayak"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  railsahayak_pgdata:

@@ -1,0 +1,744 @@
+<USER_REQUEST>
+# MASTER PROMPT — RAILSAHAYAK
+## PREMIUM RAILWAY BUSINESS & TECHNICAL PROPOSAL PRESENTATION
+### Follow the attached 11-page Blue and White Modern Business Proposal sample, page by page.
+
+---
+
+# 1. YOUR ROLE AND FINAL OBJECTIVE
+
+Act as a senior corporate presentation designer, railway technology proposal writer, PowerPoint engineer, visual storyteller, and quality-assurance specialist.
+
+Create ONE outstanding, fully editable PowerPoint presentation for the existing project named:
+
+**RailSahayak — Passenger Assistance & Railway Service Support Proposal**
+
+Subtitle:
+
+**An Independent Prototype for Clearer Passenger Guidance and Structured Service Support**
+
+Purpose: Present the RailSahayak concept, working prototype, technical implementation, potential value, limitations, and a respectful request for exploratory technical review by relevant Indian Railways, IRCTC, and CRIS stakeholders.
+
+This is a serious institutional proposal. It must look like a premium corporate technology presentation, not a school project, generic template, or AI-generated collection of text cards.
+
+The user has repeatedly rejected presentations that contain weak content, oversized empty areas, childish visuals, crowded text, and text overflowing slide boundaries. Avoid every one of these problems.
+
+**Create exactly ONE final PPTX first. Do not create the Word proposal or any other document.**
+
+# 2. REQUIRED REFERENCE FILES
+
+I will attach:
+
+1. The 11-page `Blue and White Modern Business Proposal Presentation.pdf`.
+2. The existing RailSahayak stakeholder presentation PPTX/PDF.
+3. Other relevant project files or screenshots if available.
+
+Study the sample visually, page by page, before designing the new presentation.
+
+The attached sample has 11 pages. Follow its page sequence and visual design logic, adapting each page to RailSahayak.
+
+Do not simply copy the template's placeholder text. Replace every placeholder with complete, relevant, professionally written RailSahayak content.
+
+Do not blindly copy the old RailSahayak deck either. Audit its claims, remove unsupported statements, improve the narrative, and use verified project information.
+
+# 3. EXACT DESIGN DIRECTION
+
+## Overall visual identity
+
+Follow the attached sample's distinctive design:
+- White/off-white paper-textured background.
+- Navy-blue headings.
+- Light-blue to cyan gradients used selectively near slide edges.
+- Tall, elegant condensed headings similar to the reference.
+- Clean corporate typography.
+- Large, well-composed railway imagery.
+- Balanced left-text/right-image layouts.
+- Occasional full-width blue panels and horizontal timeline layouts.
+- Simple, precise lines, numbered sections, and restrained geometric accents.
+
+The visual style should communicate railway infrastructure, reliability, passenger support, and technical professionalism.
+
+Do not turn every slide into the same layout. Follow the reference's variation from page to page.
+
+## Colour palette
+
+Use a consistent palette:
+- Navy blue: `#17466D`
+- Deep navy: `#123654`
+- Railway blue: `#287DA5`
+- Light blue: `#B9D9E7`
+- Pale cyan: `#DDF0F5`
+- Off-white: `#F7F7F4`
+- Charcoal text: `#273746`
+- White: `#FFFFFF`
+
+Use gradients sparingly. Ensure strong text contrast.
+
+## Font family
+
+Use:
+- **Headings:** Oswald or Roboto Condensed Bold. If unavailable, use Aptos Display Bold.
+- **Body:** Aptos or Arial.
+- **Numbers and labels:** Roboto Condensed Semibold or Aptos Semibold.
+
+Do not use several unrelated font families.
+
+## Font sizes
+
+Set PowerPoint page size to widescreen 16:9.
+
+- Cover title: 36–46 pt.
+- Cover subtitle: 19–23 pt.
+- Standard slide heading: 29–34 pt.
+- Section labels: 13–15 pt.
+- Body text: 17–21 pt.
+- Diagram labels: 14–17 pt.
+- Image captions: 12–14 pt.
+- Footnotes and citations: 10–12 pt.
+
+Adjust content length to fit these sizes. Do not solve overcrowding by making body text tiny.
+
+## Header and footer system
+
+Interior slides must have a consistent, attractive header system:
+- Small RailSahayak identity/logo at the top-left.
+- Section label or slide number in a consistent position.
+- Navy-blue title with adequate whitespace.
+- Small, unobtrusive footer: `RailSahayak | Independent Prototype`.
+- Slide numbering consistent with the 11-slide deck.
+
+Use a small original railway-inspired mark, such as a stylized railway track combined with a simple train-front silhouette. Do not reproduce an official Indian Railways emblem or IRCTC logo.
+
+## Railway visual requirements
+
+Use visually relevant railway assets throughout the presentation:
+- A premium Indian passenger train as the cover hero image.
+- Train tracks, railway station platforms, coaches, station boards, and railway route imagery.
+- A railway ticket or e-ticket illustration on payment and booking slides.
+- A PNR/status interface illustration on the relevant slide.
+- Complaint/document and support-channel icons on the grievance slide.
+- Railway infrastructure or clean technical diagrams on architecture and implementation slides.
+
+Prefer high-quality, authentic railway photographs or carefully crafted vector illustrations.
+
+Do not use unrelated skyscrapers, generic business people, office stock photography, random technology images, or visuals unrelated to passenger railways.
+
+Use only assets that can legally be used. Do not use an image merely because it appears in a search result without considering its usage rights.
+
+Emojis may be used sparingly in internal notes or minor visual accents, but **do not use emoji as the primary illustration style**. Use consistent professional icons instead.
+
+## Cover image
+
+The cover must contain a striking, high-quality train image:
+- Large passenger train on railway tracks, ideally an Indian railway context.
+- Train positioned on the right half or integrated into the blue background.
+- Navy-blue title on the left.
+- A soft blue gradient or tinted image treatment tying the composition together.
+- Enough negative space for the title.
+- No text placed over visually busy train details.
+- No invented railway logos, government seals, or endorsement marks.
+
+The first impression should be premium, confident, and relevant to Indian railway passenger services.
+
+# 4. CONTENT AND ACCURACY RULES
+
+Before writing the slides, inspect the existing RailSahayak project files, source code, documentation, test output, and available screenshots.
+
+The project name is always **RailSahayak**. Never rename it to “RailSahayak AI.”
+
+Distinguish clearly between:
+1. Implemented prototype capabilities.
+2. Locally verified engineering results.
+3. Proposed future capabilities.
+4. Unverified assumptions requiring further research.
+
+Do not claim official approval, railway partnership, an authorized pilot, production deployment, or live railway integration.
+
+Do not claim live PNR lookup, live train status, actual ticket booking, refund execution, or live RailMadad integration unless verified and authorized.
+
+Do not invent market size, passenger statistics, survey findings, financial projections, success rates, or KPI achievements.
+
+Do not use unsupported figures such as 30% complaint deflection, 45% duplicate-booking reduction, or 90% passenger comprehension as achieved results.
+
+Do not use “zero hallucination,” “legally exact,” “immutable,” “production-ready,” or “100% secure” as unsupported claims.
+
+If test results such as 29/29 passing are mentioned, confirm them from actual project test output. State that local tests do not prove production readiness.
+
+Any proposed timeline or KPI must be labelled **Proposed**, **Illustrative**, or **To be measured**.
+
+For railway rules, payment settlement timelines, refunds, ticket cancellation, waitlist rules, and grievance channels, use verified official sources when available. Include short source references in a readable footer or source note. Do not invent circular numbers or legal citations.
+
+If official verification is not possible, use cautious language and flag the claim for verification rather than stating it as settled law.
+
+No modifications to the application's source code, database, or configuration are permitted. This is a presentation-only task.
+
+# 5. SLIDE-BY-SLIDE SPECIFICATION
+
+Create exactly 11 slides, matching the 11 pages of the reference sample. Use the following content and design directions precisely.
+
+---
+
+## SLIDE 1 — COVER
+
+### Main title
+
+**RailSahayak**
+
+### Secondary title
+
+**PASSENGER ASSISTANCE & RAILWAY SERVICE SUPPORT PROPOSAL**
+
+### Subtitle
+
+An Independent Prototype for Clearer Passenger Guidance and Structured Service Support
+
+### Supporting statement
+
+A technology concept designed to help passengers understand next steps for selected railway journey, payment, reservation-guidance, and complaint-tracking scenarios.
+
+### Boundary label
+
+`INDEPENDENT TECHNICAL PROPOSAL | OCTOBER 2026`
+
+### Exact design
+
+Replicate page 1 of the sample:
+- Place a small RailSahayak railway-track mark at the top-left.
+- Place the project name prominently in the upper-left/middle-left area.
+- Use a large condensed navy-blue heading.
+- Place the subtitle and short description beneath it.
+- Use a large, high-quality passenger train photograph on the right or as a carefully integrated background visual.
+- Use a subtle navy/cyan gradient behind or around the train image.
+- Add a very small independent-prototype disclaimer at the bottom.
+
+The train must be visually prominent, but the title must remain easy to read.
+
+Do not place a large block of technical text on the cover.
+
+Do not use the placeholder `COMPANY`, a stock website, fake contact information, or official railway logos.
+
+---
+
+## SLIDE 2 — PASSENGER NEEDS & OPPORTUNITY
+
+### Main heading
+
+**PASSENGER NEEDS & OPPORTUNITY**
+
+### Opening statement
+
+Railway journeys involve multiple decisions before travel, during booking, and when unexpected issues occur. RailSahayak explores whether clearer, structured guidance can help passengers identify appropriate next steps.
+
+### Section 01 — BEFORE TRAVEL
+
+**Route and Reservation Guidance**
+
+Passengers may need help understanding station codes, route options, quota terminology, reservation status, and official information sources.
+
+### Section 02 — WHEN A PAYMENT FAILS
+
+**Understand the Next Step**
+
+A payment debit without a generated ticket can leave a passenger uncertain about transaction status, refund procedures, and whether to contact the bank or booking platform.
+
+### Section 03 — RESERVATION & JOURNEY STATUS
+
+**Understand the Applicable Rules**
+
+Passengers may need clear explanations of waitlist status, charting, ticket category, and the limits of the information shown by an independent advisory tool.
+
+### Section 04 — AFTER AN INCIDENT
+
+**Find the Appropriate Support Channel**
+
+Passengers may need assistance identifying the relevant official channel for a commercial, payment, operational, or safety-related concern.
+
+### Closing statement
+
+**Opportunity:** Make procedural guidance easier to understand without replacing official railway systems.
+
+### Exact design
+
+Replicate page 2:
+- Left side: heading and concise opening statement.
+- Below: two numbered sections with clear titles and 2–3 short lines each.
+- Right side: one large, vertically cropped image of an Indian passenger train at a station or on a railway platform.
+- Use a light-blue accent around the image.
+- Place a small ticket or railway-route icon beside one section if it improves clarity.
+
+Do not present the issues as measured market demand or claim a specific number of affected passengers.
+
+Do not use an invented market-size chart.
+
+---
+
+## SLIDE 3 — PROBLEM STATEMENT
+
+### Main heading
+
+**THE PROBLEM STATEMENT**
+
+### Main paragraph
+
+Passengers can face uncertainty when the next step depends on the type of ticket, transaction state, railway rule, or responsible service channel. The proposed focus of RailSahayak is to organize these questions into clearer guidance and structured next steps.
+
+### Problem 01 — TRANSACTION UNCERTAINTY
+
+A payment debit without ticket generation can create uncertainty about transaction reconciliation, refund procedures, and the appropriate support channel.
+
+### Problem 02 — RULE COMPLEXITY
+
+Reservation status and ticket category can affect what a passenger should do next. Explanations must be accurate, current, and tied to the relevant rules.
+
+### Problem 03 — SUPPORT-CHANNEL CONFUSION
+
+Commercial, payment, operational, and safety issues may require different official channels. Clear routing guidance can help passengers understand where to seek authoritative assistance.
+
+### Exact design
+
+Replicate page 3:
+- Left half: large heading and the main paragraph.
+- Right half: three stacked light-blue/medium-blue rounded rectangles.
+- Each rectangle has a numbered circle, short bold heading, and concise explanatory text.
+- Use railway-related line icons: ticket/payment, reservation board, and support document.
+- Keep the boxes aligned, equally spaced, and visually balanced.
+
+Do not add legal threats, unsupported penalty statements, or claims about actual passenger behaviour without verified evidence.
+
+---
+
+## SLIDE 4 — OUR SOLUTION
+
+### Main heading
+
+**OUR SOLUTION**
+
+### Introductory paragraph
+
+RailSahayak is an independent advisory prototype that brings selected passenger-support workflows into one interface. It aims to explain possible next steps and point users toward official channels when authoritative action or confirmation is required.
+
+### Step 01 — CLARIFY
+
+**Plain-Language Guidance**
+
+Explain selected reservation, payment-help, and complaint procedures in clear language based on the functionality actually implemented.
+
+### Step 02 — ORGANIZE
+
+**Structured Issue Capture**
+
+Help organize relevant incident details and complaint information without requesting unnecessary payment secrets or sensitive credentials.
+
+### Step 03 — DIRECT
+
+**Appropriate Next Steps**
+
+Guide the passenger toward the relevant official service or support channel when an issue requires authoritative information or action.
+
+### Important boundary
+
+RailSahayak does not replace official booking systems. Live railway data and institutional integrations must not be represented as available unless verified and authorized.
+
+### Exact design
+
+Replicate page 4:
+- Use a large pale-blue panel occupying most of the slide.
+- Left section: heading and a concise description.
+- Right section: three numbered stages arranged vertically along a thin navy-blue line.
+- Use small, consistent icons: information, document, directional arrow.
+- Keep all text inside the panel with generous margins.
+
+This slide must explain the solution visually without repeating the entire problem statement.
+
+---
+
+## SLIDE 5 — VALUE PROPOSITION
+
+### Main heading
+
+**THE VALUE PROPOSITION**
+
+### Value 01 — CLARITY
+
+Organize complex procedural information into short, understandable guidance.
+
+### Value 02 — STRUCTURE
+
+Capture selected issue details in a consistent format to make the next step easier to understand.
+
+### Value 03 — TRACEABILITY
+
+Where implemented, show complaint identifiers and recorded status changes to help users follow a case within the prototype.
+
+### Value 04 — COMPLEMENTARY DESIGN
+
+Keep official booking, payment, and railway operations under their respective authorized systems.
+
+### Closing statement
+
+**The proposed value is clearer guidance and better-organized next steps—not a replacement for official railway services.**
+
+### Exact design
+
+Replicate page 5:
+- Large centered navy-blue heading in the upper third.
+- One clean horizontal line across the slide.
+- Four evenly spaced numbered milestones along the line.
+- Each milestone has a short bold label, a small railway-related icon, and no more than three concise lines.
+- Use varied light-blue accents while keeping the typography consistent.
+- Keep equal column widths and spacing.
+
+Do not use four long paragraphs or tiny text.
+
+---
+
+## SLIDE 6 — TARGET AUDIENCE & USE CASES
+
+### Main heading
+
+**TARGET AUDIENCE & USE CASES**
+
+### Introductory paragraph
+
+The initial prototype is intended to explore passenger-facing guidance scenarios. Its usefulness and suitability for different groups must be assessed through stakeholder review and user evaluation.
+
+### Audience 01 — PASSENGERS PLANNING A JOURNEY
+
+Potential use: understanding station codes, route guidance, reservation terminology, and where to find authoritative travel information.
+
+### Audience 02 — PASSENGERS WITH PAYMENT QUESTIONS
+
+Potential use: understanding what information to preserve and which official service to contact after a payment issue.
+
+### Audience 03 — PASSENGERS NEEDING RESERVATION GUIDANCE
+
+Potential use: understanding the meaning and limitations of reservation and waitlist information.
+
+### Audience 04 — PASSENGERS TRACKING A COMPLAINT
+
+Potential use: recording an issue and following the status available within the RailSahayak prototype.
+
+### Exact design
+
+Replicate page 6:
+- Left: heading and concise introductory paragraph.
+- Right: four equal rectangles in a 2×2 grid.
+- Each rectangle has a number, a simple icon, a short title, and two concise lines.
+- Use alternating pale-blue and medium-blue fills with adequate contrast.
+- Relevant icons: route map, payment ticket, reservation board, and complaint document.
+
+Do not claim the system has already been validated with these groups.
+
+---
+
+## SLIDE 7 — ECOSYSTEM & POSITIONING
+
+### Main heading
+
+**RAILSAHAYAK IN THE RAILWAY ECOSYSTEM**
+
+### Main paragraph
+
+RailSahayak is intended as a complementary, independent guidance layer. Official railway and payment systems remain the authoritative sources for transactions, operational status, refunds, and formal grievance resolution.
+
+### Comparison 01 — OFFICIAL BOOKING SYSTEMS
+
+Official systems handle the booking and transaction functions they are authorized to provide.
+
+RailSahayak's proposed complementary role: explain selected procedures and guide users toward the relevant official process.
+
+### Comparison 02 — OFFICIAL TRAIN INFORMATION
+
+Official sources remain authoritative for live train running information and other operational updates.
+
+RailSahayak's proposed complementary role: explain where and how to check the relevant information without falsely claiming live access.
+
+### Comparison 03 — OFFICIAL GRIEVANCE CHANNELS
+
+Official grievance services remain responsible for their established reporting and resolution processes.
+
+RailSahayak's proposed complementary role: organize selected issue details and explain the next appropriate channel.
+
+### Exact design
+
+Replicate page 7:
+- Left side: a clean three-layer relationship diagram or comparison graphic.
+- Right side: heading and the concise explanatory paragraph.
+- Use labels for “Official Systems” and “Independent Advisory Prototype.”
+- Use arrows to show guidance toward official channels, not replacement or control of those systems.
+
+Do not use an unlabeled bar chart. Do not invent market shares, usage figures, or competitor performance metrics.
+
+Do not state that RailSahayak reduces official workload until a properly designed evaluation demonstrates it.
+
+---
+
+## SLIDE 8 — ENGAGEMENT & ADOPTION STRATEGY
+
+### Main heading
+
+**ENGAGEMENT & ADOPTION STRATEGY**
+
+### Introductory paragraph
+
+The first priority is to establish technical credibility, validate guidance, and understand institutional requirements. Any future deployment or public-facing distribution would depend on the appropriate approvals and a clear operational model.
+
+### Stage 01 — TECHNICAL REVIEW
+
+Share the prototype, explain its architecture, and invite feedback on implemented features, known limitations, and evidence.
+
+### Stage 02 — RULE VALIDATION
+
+Request guidance on validating the railway-related procedural content against current authoritative sources.
+
+### Stage 03 — CONTROLLED EVALUATION
+
+If stakeholders consider it appropriate, explore an authorized, limited evaluation with clearly defined scope and safeguards.
+
+### Stage 04 — FUTURE PATHWAY
+
+Consider further development, mentorship, academic collaboration, licensing, or handover only if there is mutual interest and an appropriate institutional process.
+
+### Exact design
+
+Replicate page 8:
+- Left side: heading, short paragraph, and four concise numbered steps.
+- Right side: a large professional photograph of an Indian railway station information board, passenger information display, or railway platform.
+- Use a restrained navy-blue photo treatment and clean crop.
+- Keep text readable and leave adequate space around the image.
+
+This is a stakeholder engagement strategy, not a claim of an approved marketing campaign or existing institutional collaboration.
+
+---
+
+## SLIDE 9 — IMPLEMENTATION & EVALUATION PLAN
+
+### Main heading
+
+**IMPLEMENTATION & EVALUATION PLAN**
+
+### Introductory paragraph
+
+Any further evaluation should proceed through explicit review stages. The sequence below is a proposed framework, not an approved Indian Railways schedule.
+
+### Stage 01 — BASELINE REVIEW
+
+Review the source code, architecture, current capabilities, limitations, and evidence supporting the existing prototype.
+
+### Stage 02 — RULE & SECURITY REVIEW
+
+Validate procedural guidance and assess privacy, authentication, access control, logging, and other relevant security requirements.
+
+### Stage 03 — AUTHORIZED TESTING
+
+If approved, assess the prototype in an appropriate test environment using authorized or simulated data.
+
+### Stage 04 — LIMITED EVALUATION
+
+If separately authorized, evaluate a clearly bounded set of use cases with defined user safeguards and success criteria.
+
+### Stage 05 — REVIEW & DECISION
+
+Use the evaluation evidence to decide whether to improve, extend, transfer, or discontinue the prototype.
+
+### Exact design
+
+Replicate page 9:
+- Large navy heading centered near the top.
+- Short introductory paragraph beneath it.
+- A broad, high-quality railway photograph across the lower half.
+- Add a small, clearly labelled five-stage timeline either above the photograph or in a narrow strip beneath the paragraph.
+- Use a consistent numbered progression and readable text.
+
+Do not invent approval dates, deployment commitments, or a six-month institutional schedule.
+
+---
+
+## SLIDE 10 — CONCLUSION & NEXT STEPS
+
+### Main heading
+
+**CONCLUSION & NEXT STEPS**
+
+### Paragraph 1 — THE PROPOSAL
+
+RailSahayak presents an independent software prototype exploring how selected railway passenger questions can be organized into clearer guidance, structured issue capture, and appropriate official-channel direction.
+
+Its current value should be judged by the capabilities demonstrated in the actual prototype, the accuracy of its guidance, the quality of its implementation, and the transparency of its limitations.
+
+### Paragraph 2 — THE REQUEST
+
+We respectfully invite relevant technical stakeholders to review the concept and provide guidance on procedural accuracy, security expectations, authorized testing requirements, and possible future development.
+
+If an existing railway system should not be replaced or changed, RailSahayak could still be considered for complementary evaluation, subject to technical, legal, and institutional review. Technical mentorship, skill-development guidance, further development, or a possible handover arrangement may also be discussed if appropriate.
+
+### Three next steps
+
+1. Review the current prototype and its evidence.
+2. Identify required corrections and institutional prerequisites.
+3. Decide whether any further evaluation is appropriate.
+
+### Exact design
+
+Replicate page 10:
+- Use a large rounded pale-blue panel with comfortable internal margins.
+- Main heading centered or slightly above the content.
+- Two well-spaced paragraphs with clear visual hierarchy.
+- Three concise next-step items at the bottom with small numbered markers.
+- Keep the panel visually calm and uncluttered.
+
+Do not use a giant block of small text. The final request must be readable from a normal presentation distance.
+
+---
+
+## SLIDE 11 — THANK YOU
+
+### Main heading
+
+**THANK YOU**
+
+### Secondary heading
+
+**RAILSAHAYAK**
+
+### Subtitle
+
+Passenger Assistance & Railway Service Support Proposal
+
+### Closing statement
+
+**Request for Technical Review and Guidance**
+
+An independent prototype presented for constructive feedback and possible future evaluation.
+
+### Footer
+
+`Independent Prototype | No Official Railway Endorsement Claimed`
+
+### Exact design
+
+Replicate page 11:
+- Large condensed navy-blue “THANK YOU” on the left.
+- RailSahayak name directly below or above the closing subtitle.
+- Large, visually striking passenger train image or an elegant railway-track image integrated into a blue/cyan background.
+- Small railway-inspired mark at the top-left.
+- Minimal text and plenty of breathing room.
+
+No fake email address, fabricated website, invented phone number, government logo, or unverified QR code.
+
+---
+
+# 6. ACTUAL PRODUCT SCREENSHOTS
+
+The presentation must demonstrate the real project wherever possible.
+
+Search the existing project directory and provided attachments for genuine RailSahayak screenshots.
+
+If genuine screenshots are available:
+- Use them on slides where they provide meaningful product evidence.
+- Crop them carefully without cutting off interface elements.
+- Add short labels.
+- Keep text within the screenshot legible.
+- Do not alter the screenshot in a way that misrepresents functionality.
+
+If no genuine screenshots are available, do not fabricate an actual-product screenshot.
+
+Use a clearly labelled conceptual illustration only if necessary, and state that actual interface evidence still needs to be supplied.
+
+Do not interrupt the entire presentation-generation task to ask the user to restart or reverify the backend. This task is presentation-only.
+
+# 7. CONTENT DENSITY AND LAYOUT RULES
+
+Use these strict limits:
+- One primary message per slide.
+- Maximum 3–4 main content groups per slide.
+- Avoid paragraphs longer than approximately 45–60 words.
+- Use short headings and concise explanatory text.
+- Keep diagrams and labels readable.
+- Maintain equal spacing between repeated elements.
+- Do not create unnecessary empty areas merely to imitate a template.
+- Do not fill every empty area with decorative shapes.
+- Balance negative space with meaningful visual content.
+
+Use the left-text/right-visual composition when it suits the content, but vary layouts according to the sample.
+
+Use full-width images only where the sample uses that composition or where a visual clearly improves the story.
+
+# 8. ZERO-OVERFLOW ACCEPTANCE TEST
+
+This is mandatory.
+
+No element may cross the slide boundaries.
+
+No text may be clipped, overlapped, hidden, or squeezed into an unreadable size.
+
+No image may cover the title or obscure essential content.
+
+No heading may collide with the logo, header, footer, or another object.
+
+All repeated elements must align consistently.
+
+Keep a safe margin of at least approximately 0.35 inches from slide edges.
+
+After generating the presentation:
+1. Export the PPTX to PDF.
+2. Render all 11 slides to images.
+3. Inspect every slide individually.
+4. Run object-boundary checks where possible.
+5. Review text boxes for overflow and excessive line wrapping.
+6. Check the exported PDF at presentation size.
+7. Correct every clipping, overlap, alignment, or readability defect.
+8. Render and inspect again after corrections.
+9. Confirm that all 11 slides are present and in the correct order.
+10. Confirm that the final PDF matches the final PPTX.
+
+Do not claim visual inspection was completed unless every rendered slide was actually reviewed.
+
+# 9. FINAL FILES AND WORK BOUNDARIES
+
+Create only the following files:
+
+`docs/RailSahayak_Stakeholder_Presentation.pptx`
+
+`docs/RailSahayak_Stakeholder_Presentation.pdf`
+
+The PDF must be an export of the same PPTX, not a separate presentation.
+
+Do not create:
+- A Word document.
+- A proposal DOCX.
+- A second PPTX.
+- Additional presentation variants.
+- New application features.
+- Source-code modifications.
+- Database modifications.
+- GitHub commits or uploads.
+- External submissions or emails.
+
+The user must review and approve the PPT before the next project phase begins.
+
+# 10. FINAL QUALITY REPORT
+
+After the presentation is generated, provide a concise report containing:
+- The exact output paths.
+- The final slide count.
+- Confirmation of whether every slide was rendered and visually inspected.
+- Confirmation of whether any overflow or clipping defects remain.
+- The actual screenshots used.
+- Claims that were removed or qualified because evidence was insufficient.
+
+Do not state “perfect,” “fully verified,” or “ready for official submission” unless the relevant work has actually been completed.
+
+## FINAL INSTRUCTION
+
+The sample's visual style is the design reference. The slide-by-slide content above is the content reference. The existing project files are the source of truth for implementation claims.
+
+Do not invent content, statistics, screenshots, or integrations.
+
+Deliver one polished, professional, visually coherent, railway-themed RailSahayak presentation with readable content, excellent train-related imagery, accurate claims, and zero overflow.
+
+**PPT FIRST. NO DOCUMENT UNTIL THE USER APPROVES THE PPT.**
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-18T18:01:04+05:30.
+</ADDITIONAL_METADATA>

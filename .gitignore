@@ -1,0 +1,48 @@
+# Compiled class files
+target/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Package archives
+*.jar
+*.war
+*.ear
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# Environment variables & secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+
+# Runtime logs
+*.log
+run-log.txt
+
+# Database local backups and dumps
+backups/
+*.dump
+*.backup
+
+# Prevent committing raw database dumps, while explicitly preserving Flyway migration scripts
+*.sql
+!src/main/resources/db/migration/*.sql
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,223 @@
+﻿# 6. ACTUAL PRODUCT SCREENSHOTS
+
+
+
+The presentation must demonstrate the real project wherever possible.
+
+
+
+Search the existing project directory and provided attachments for genuine RailSahayak screenshots.
+
+
+
+If genuine screenshots are available:
+
+- Use them on slides where they provide meaningful product evidence.
+
+- Crop them carefully without cutting off interface elements.
+
+- Add short labels.
+
+- Keep text within the screenshot legible.
+
+- Do not alter the screenshot in a way that misrepresents functionality.
+
+
+
+If no genuine screenshots are available, do not fabricate an actual-product screenshot.
+
+
+
+Use a clearly labelled conceptual illustration only if necessary, and state that actual interface evidence still needs to be supplied.
+
+
+
+Do not interrupt the entire presentation-generation task to ask the user to restart or reverify the backend. This task is presentation-only.
+
+
+
+# 7. CONTENT DENSITY AND LAYOUT RULES
+
+
+
+Use these strict limits:
+
+- One primary message per slide.
+
+- Maximum 3û4 main content groups per slide.
+
+- Avoid paragraphs longer than approximately 45û60 words.
+
+- Use short headings and concise explanatory text.
+
+- Keep diagrams and labels readable.
+
+- Maintain equal spacing between repeated elements.
+
+- Do not create unnecessary empty areas merely to imitate a template.
+
+- Do not fill every empty area with decorative shapes.
+
+- Balance negative space with meaningful visual content.
+
+
+
+Use the left-text/right-visual composition when it suits the content, but vary layouts according to the sample.
+
+
+
+Use full-width images only where the sample uses that composition or where a visual clearly improves the story.
+
+
+
+# 8. ZERO-OVERFLOW ACCEPTANCE TEST
+
+
+
+This is mandatory.
+
+
+
+No element may cross the slide boundaries.
+
+
+
+No text may be clipped, overlapped, hidden, or squeezed into an unreadable size.
+
+
+
+No image may cover the title or obscure essential content.
+
+
+
+No heading may collide with the logo, header, footer, or another object.
+
+
+
+All repeated elements must align consistently.
+
+
+
+Keep a safe margin of at least approximately 0.35 inches from slide edges.
+
+
+
+After generating the presentation:
+
+1. Export the PPTX to PDF.
+
+2. Render all 11 slides to images.
+
+3. Inspect every slide individually.
+
+4. Run object-boundary checks where possible.
+
+5. Review text boxes for overflow and excessive line wrapping.
+
+6. Check the exported PDF at presentation size.
+
+7. Correct every clipping, overlap, alignment, or readability defect.
+
+8. Render and inspect again after corrections.
+
+9. Confirm that all 11 slides are present and in the correct order.
+
+10. Confirm that the final PDF matches the final PPTX.
+
+
+
+Do not claim visual inspection was completed unless every rendered slide was actually reviewed.
+
+
+
+# 9. FINAL FILES AND WORK BOUNDARIES
+
+
+
+Create only the following files:
+
+
+
+`docs/RailSahayak_Stakeholder_Presentation.pptx`
+
+
+
+`docs/RailSahayak_Stakeholder_Presentation.pdf`
+
+
+
+The PDF must be an export of the same PPTX, not a separate presentation.
+
+
+
+Do not create:
+
+- A Word document.
+
+- A proposal DOCX.
+
+- A second PPTX.
+
+- Additional presentation variants.
+
+- New application features.
+
+- Source-code modifications.
+
+- Database modifications.
+
+- GitHub commits or uploads.
+
+- External submissions or emails.
+
+
+
+The user must review and approve the PPT before the next project phase begins.
+
+
+
+# 10. FINAL QUALITY REPORT
+
+
+
+After the presentation is generated, provide a concise report containing:
+
+- The exact output paths.
+
+- The final slide count.
+
+- Confirmation of whether every slide was rendered and visually inspected.
+
+- Confirmation of whether any overflow or clipping defects remain.
+
+- The actual screenshots used.
+
+- Claims that were removed or qualified because evidence was insufficient.
+
+
+
+Do not state ôperfect,ö ôfully verified,ö or ôready for official submissionö unless the relevant work has actually been completed.
+
+
+
+## FINAL INSTRUCTION
+
+
+
+The sample's visual style is the design reference. The slide-by-slide content above is the content reference. The existing project files are the source of truth for implementation claims.
+
+
+
+Do not invent content, statistics, screenshots, or integrations.
+
+
+
+Deliver one polished, professional, visually coherent, railway-themed RailSahayak presentation with readable content, excellent train-related imagery, accurate claims, and zero overflow.
+
+
+
+**PPT FIRST. NO DOCUMENT UNTIL THE USER APPROVES THE PPT.**
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-18T18:01:04+05:30.
+</ADDITIONAL_METADATA>

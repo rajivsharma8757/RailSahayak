@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RailSahayak — Intelligent Railway Passenger Assistance</title>
+<style>
+:root{--navy:#103b68;--blue:#1769aa;--sky:#eaf4ff;--pale:#f5f9ff;--ink:#172b43;--muted:#687b91;--line:#e0e9f2;--green:#16845b;--amber:#a96108;--red:#b93c46;--white:#fff;--shadow:0 10px 30px rgba(18,55,92,.07)}
+*{box-sizing:border-box}body{margin:0;background:#f3f7fc;color:var(--ink);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--line);padding:22px 15px;display:flex;flex-direction:column;gap:22px}.brand{display:flex;gap:11px;align-items:center;padding:3px 8px 18px;border-bottom:1px solid var(--line)}.logo{width:43px;height:43px;background:linear-gradient(145deg,#1769aa,#103b68);color:white;border-radius:14px;display:grid;place-items:center;font-size:23px;box-shadow:0 7px 16px #1769aa30}.brand h1{font-size:17px;line-height:1.1;margin:0}.brand small{color:var(--muted);font-size:11px}.nav-label{font-size:10px;letter-spacing:1.4px;font-weight:800;color:#95a4b5;padding:0 12px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#5e7187;text-align:left;padding:12px;border-radius:11px;display:flex;align-items:center;gap:12px;font-weight:650}.nav button .ico{font-size:19px;width:24px;text-align:center}.nav button.active{background:var(--sky);color:var(--blue)}.nav button:hover:not(.active){background:#f7faff}.sidebar-bottom{margin-top:auto;background:#f5f9ff;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:12px;color:var(--muted)}.demo-dot{display:inline-block;width:7px;height:7px;background:#e3a03b;border-radius:50%;margin-right:5px}.main{min-width:0}.topbar{height:74px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px;gap:14px}.crumb{color:var(--muted);font-size:13px}.topright{display:flex;align-items:center;gap:14px}.lang{border:1px solid var(--line);background:#fff;padding:8px 11px;border-radius:9px;color:var(--ink)}.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#d9ebff;color:var(--blue);font-weight:800}.content{max-width:1240px;margin:auto;padding:28px 32px 50px}.pagehead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:23px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:var(--blue)}h2{font-size:28px;letter-spacing:-.6px;margin:4px 0 7px}h3{font-size:17px;margin:0 0 12px}p{margin:0;color:var(--muted)}.subtitle{max-width:700px;font-size:14px}.badge{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:800;background:#fff2d9;color:#9b5c07;white-space:nowrap}.badge.blue{background:#e5f2ff;color:#1769aa}.badge.green{background:#e3f7ed;color:#16764f}.badge.red{background:#ffebed;color:#ae3440}.grid{display:grid;gap:17px}.cols2{grid-template-columns:repeat(2,minmax(0,1fr))}.cols3{grid-template-columns:repeat(3,minmax(0,1fr))}.cols4{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:var(--shadow);min-width:0}.card.flat{box-shadow:none}.hero{background:linear-gradient(115deg,#103b68 0%,#1769aa 65%,#328bca 100%);color:white;padding:27px;border-radius:20px;position:relative;overflow:hidden;margin-bottom:20px}.hero:after{content:"🚆";position:absolute;font-size:115px;right:4%;top:4%;opacity:.14;transform:rotate(-8deg)}.hero h2{font-size:27px;max-width:610px;position:relative;z-index:1}.hero p{color:#d8eaff;max-width:560px;position:relative;z-index:1}.hero .actions{margin-top:19px;position:relative;z-index:1}.btn{border:1px solid transparent;border-radius:10px;padding:10px 14px;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:.15s}.btn.primary{background:var(--blue);color:white}.btn.primary:hover{background:#10578f}.btn.white{background:white;color:var(--navy)}.btn.outline{background:white;border-color:#cfdae7;color:var(--ink)}.btn.soft{background:var(--sky);color:var(--blue)}.btn.danger{background:#fff0f1;color:var(--red)}.btn.small{padding:7px 10px;font-size:12px}.btn:disabled{opacity:.5;cursor:not-allowed}.actions{display:flex;gap:9px;flex-wrap:wrap}.stat{display:flex;align-items:center;gap:13px}.stat-icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:var(--sky);font-size:21px}.stat strong{font-size:25px;display:block;letter-spacing:-.5px}.stat span{font-size:12px;color:var(--muted)}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:23px 0 13px}.section-title h3{margin:0}.quick{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;background:white;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);color:var(--ink)}.quick:hover{border-color:#9fc9ef;transform:translateY(-1px)}.quick .qicon{font-size:22px;background:var(--sky);border-radius:11px;width:43px;height:43px;display:grid;place-items:center;flex:none}.quick b{display:block;margin:1px 0 4px}.quick small{color:var(--muted);font-size:12px;display:block}.field{display:grid;gap:6px;margin-bottom:14px}.field label{font-size:12px;font-weight:750;color:#435b74}.field input,.field select,.field textarea{width:100%;border:1px solid #d7e2ee;border-radius:10px;background:white;padding:11px 12px;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#4d9bdb;box-shadow:0 0 0 3px #1769aa15}.field textarea{min-height:84px;resize:vertical}.field .hint{font-size:11px;color:var(--muted)}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.route-card{border:1px solid var(--line);border-radius:14px;padding:17px;margin-top:12px}.route-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.trainname{font-weight:800}.traincode{font-size:11px;color:var(--muted);margin-top:3px}.route{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin:17px 0}.route strong{font-size:19px;display:block}.route small{color:var(--muted);font-size:11px}.route-line{height:1px;background:#aac5df;position:relative;min-width:30px}.route-line:after{content:"●";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--blue);background:#fff;padding:0 4px;font-size:11px}.route-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}.alert{padding:13px 15px;border-radius:12px;font-size:13px;display:flex;gap:10px;align-items:flex-start;margin-bottom:16px}.alert.info{background:#edf6ff;color:#24587e;border:1px solid #d4eaff}.alert.warn{background:#fff7e8;color:#87530c;border:1px solid #f5e2ba}.alert.success{background:#eaf8f0;color:#176e4b;border:1px solid #ccebd9}.alert strong{display:block;margin-bottom:2px}.steps{display:grid;gap:12px}.step{display:flex;gap:12px;align-items:flex-start}.step-num{width:28px;height:28px;border-radius:50%;background:var(--sky);color:var(--blue);font-weight:800;display:grid;place-items:center;flex:none;font-size:12px}.step p{font-size:13px}.checkrow{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.checkrow:last-child{border:0}.checkrow input{margin-top:4px;accent-color:var(--blue)}.checkrow b{font-size:13px;display:block}.checkrow small{color:var(--muted);font-size:12px}.case{border:1px solid var(--line);border-radius:13px;padding:15px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-top:10px;cursor:pointer;transition:border-color .15s}.case:hover{border-color:#9fc9ef}.case b{display:block;font-size:13px}.case small{color:var(--muted);font-size:11px}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px}th{text-align:left;color:var(--muted);font-weight:750;background:#f8fbff}th,td{padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}.bar-row{display:grid;grid-template-columns:100px 1fr 34px;gap:10px;align-items:center;margin:14px 0;font-size:12px}.bar{height:8px;border-radius:99px;background:#edf2f7;overflow:hidden}.bar span{height:100%;display:block;background:linear-gradient(90deg,#1769aa,#6db3ed);border-radius:99px}.progress{height:6px;border-radius:99px;background:#e7edf4;overflow:hidden;margin-top:9px}.progress span{display:block;height:100%;background:var(--blue)}.empty{text-align:center;padding:30px 15px;color:var(--muted)}.empty div{font-size:30px;margin-bottom:7px}.footnote{font-size:11px;color:var(--muted);margin-top:18px}.toast{position:fixed;right:22px;bottom:22px;background:#123b63;color:white;border-radius:12px;padding:13px 17px;box-shadow:0 12px 32px #102b4835;max-width:min(380px,calc(100vw - 36px));z-index:10;animation:pop .2s ease}.toast small{display:block;color:#d9eaff;margin-top:3px}@keyframes pop{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}.mobile-menu{display:none}.hindi{display:none}.hidden{display:none!important}
+.modal-overlay{position:fixed;inset:0;background:rgba(16,35,60,.45);display:grid;place-items:center;z-index:100;padding:18px}.modal{background:#fff;border-radius:18px;max-width:600px;width:100%;padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.2);max-height:90vh;overflow-y:auto}
+@media(max-width:1000px){.app{grid-template-columns:215px minmax(0,1fr)}.content{padding:23px 20px 40px}.topbar{padding:0 20px}.cols4{grid-template-columns:repeat(2,minmax(0,1fr))}.hero:after{right:-10px}}
+@media(max-width:720px){.app{display:block}.sidebar{position:fixed;z-index:20;left:0;top:0;bottom:0;width:265px;transform:translateX(-105%);transition:transform .2s;box-shadow:15px 0 35px #0b2d4b18}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-flex}.topbar{height:64px;padding:0 14px}.crumb{font-size:12px}.topright{gap:8px}.content{padding:20px 14px 35px}.pagehead{display:block}.pagehead>.badge{margin-top:12px}.hero{padding:22px}.hero h2{font-size:23px;max-width:85%}.hero:after{font-size:76px;right:-15px;top:30%}.cols2,.cols3{grid-template-columns:1fr}.cols4{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:16px}.formgrid{grid-template-columns:1fr}.route strong{font-size:17px}.route-card{padding:13px}.case{display:block}.case .badge{margin-top:8px}.stat strong{font-size:22px}.section-title{margin-top:20px}.lang{padding:7px}.topright .profile-name{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo">🚆</div><div><h1>RailSahayak</h1><small>Passenger assistance</small></div></div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="home"><span class="ico">⌂</span>Overview</button>
+    <button data-page="trains"><span class="ico">⌕</span>Smart Train Finder</button>
+    <button data-page="payment"><span class="ico">₹</span>Payment Help</button>
+    <button data-page="pnr"><span class="ico">▣</span>PNR Guide</button>
+    <button data-page="cases"><span class="ico">☷</span>Complaint Help</button>
+    <button data-page="admin" class="hidden"><span class="ico">▦</span>Admin Dashboard</button>
+  </nav>
+  <div class="sidebar-bottom"><div style="font-weight:800;color:#234564;margin-bottom:7px"><span class="demo-dot"></span>Prototype mode</div>Sample data only. Not connected to IRCTC, live railway systems, or payment gateways.</div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div style="display:flex;align-items:center;gap:11px"><button class="btn outline mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button><div class="crumb">RailSahayak <span style="color:#a7b5c5">/</span> <b id="crumb">Overview</b></div></div>
+  <div class="topright"><select class="lang" id="language" aria-label="Language"><option value="en">EN · English</option><option value="hi">HI · हिन्दी</option></select><div class="avatar">RS</div><span class="profile-name" style="font-size:12px;font-weight:750">Passenger</span><button class="btn outline small hidden" id="signOutBtn" type="button">Sign out</button></div>
+</header>
+<div class="content" id="content"></div>
+</main>
+</div>
+<div id="modalRoot"></div>
+<div id="toastRoot" aria-live="polite"></div>
+<script>
+const $=s=>document.querySelector(s);
+const pages={home:"Overview",trains:"Smart Train Finder",payment:"Payment Help",pnr:"PNR Guide",cases:"Complaint Help",admin:"Admin Dashboard"};
+let currentPage="home", lang="en", cases=[], auditLogs=[];
+let authHeader="", currentUser="", currentRole="", authReady=false;
+let trainData=null, diagnosisData=null, paymentCaseCreatedId=null, pnrAnalysisData=null, caseCreatedId=null, caseFilter="ALL", caseSearch="";
+const API_BASE="/api/v1";
+
+function titleStatus(value){const s=String(value||"OPEN").toUpperCase();return s==="RESOLVED"?"Resolved":s==="IN_PROGRESS"?"In progress":"Open";}
+function apiDate(value){if(!value)return "—";const d=new Date(value);return Number.isNaN(d.getTime())?String(value):d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});}
+function normalizeCase(c){return {id:c.id,owner:c.owner||"",category:c.category||"Other",status:titleStatus(c.status),rawStatus:c.status,date:apiDate(c.createdAt),detail:c.description||"",createdAt:c.createdAt,updatedAt:c.updatedAt};}
+
+async function api(path,options={}){
+  const headers={"Content-Type":"application/json",...(options.headers||{})};
+  if(authHeader) headers.Authorization=authHeader;
+  const response=await fetch(API_BASE+path,{...options,headers});
+  const body=await response.text();
+  let data=null;
+  try{data=body?JSON.parse(body):null}catch{data=body;}
+  if(!response.ok){
+    const message=(data&&typeof data==="object"&&(data.message||data.error))||`HTTP ${response.status}`;
+    throw new Error(message);
+  }
+  return data;
+}
+
+async function loadCases(){
+  const data=await api(currentRole==="ADMIN"?"/admin/cases":"/cases");
+  cases=Array.isArray(data)?data.map(normalizeCase):[];
+}
+
+async function loadAuditLogs(){
+  if(currentRole==="ADMIN"){
+    try{
+      const data=await api("/admin/audit-logs");
+      auditLogs=Array.isArray(data)?data:[];
+    }catch(err){
+      console.warn("Could not load audit logs:", err);
+      auditLogs=[];
+    }
+  }
+}
+
+function syncRoleUI(){
+  const isAdmin=authReady&&currentRole==="ADMIN";
+  const adminNav=document.querySelector('#nav button[data-page="admin"]');
+  if(adminNav) adminNav.classList.toggle("hidden",!isAdmin);
+
+  const profile=document.querySelector(".profile-name");
+  if(profile) profile.textContent=authReady?`${currentUser} · ${isAdmin?"Admin":"Passenger"}`:"Guest";
+
+  const avatar=document.querySelector(".avatar");
+  if(avatar) avatar.textContent=authReady?(isAdmin?"AD":"RS"):"--";
+
+  const signOut=$("#signOutBtn");
+  if(signOut) signOut.classList.toggle("hidden",!authReady);
+
+  document.querySelectorAll('[data-action="admin"]').forEach(el=>{
+    el.classList.toggle("hidden",!isAdmin);
+  });
+}
+
+function loginView(){
+  return `${head("LOCAL BACKEND","Sign in to RailSahayak","Authenticate with the local Spring Boot backend. User roles are verified by the server.",'<span class="badge blue">Secure Server Auth</span>')}
+<div class="grid cols2"><div class="card"><h3>Demo sign-in</h3><form id="loginForm">
+<div class="field"><label for="loginUsername">Username</label><input id="loginUsername" value="passenger" autocomplete="username" required maxlength="80"></div>
+<div class="field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" autocomplete="current-password" required></div>
+<button class="btn primary" type="submit">Connect to backend</button><p id="loginError" role="alert" style="margin-top:12px;color:#b93c46"></p></form>
+<div class="footnote">Passenger: <b>passenger</b> / <code>PassengerDemo123!</code><br>Admin: <b>admin</b> / <code>AdminDemo123!</code><br>Credentials stay in memory only and clear on refresh/sign out.</div></div>
+<div class="card"><h3>Backend connection & persistence</h3><p>Complaint records and audit events are stored persistently in PostgreSQL (Flyway managed).</p>
+<div class="alert warn" style="margin-top:18px"><span>⚡</span><div>Server configured at <b>http://localhost:8081/</b>. Same-origin hosting prevents CORS errors.</div></div>
+<p class="footnote">Railway availability, PNR lookup, payments and refunds are advisory/sample only and do not contact official live railway payment gateways.</p></div></div>`;
+}
+
+function wireLogin(){
+  const form=$("#loginForm");
+  if(!form)return;
+  form.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const username=$("#loginUsername").value.trim(),password=$("#loginPassword").value;
+    const err=$("#loginError");
+    err.textContent="Verifying with backend…";
+    authHeader="Basic "+btoa(unescape(encodeURIComponent(username+":"+password)));
+
+    try{
+      const authInfo=await api("/auth/me");
+      currentUser=authInfo.username;
+      currentRole=(authInfo.roles||[]).includes("ROLE_ADMIN")?"ADMIN":"PASSENGER";
+      authReady=true;
+
+      await loadCases();
+      if(currentRole==="ADMIN") await loadAuditLogs();
+
+      syncRoleUI();
+      go(currentRole==="ADMIN"?"admin":"home");
+      toast("Authenticated successfully",`Welcome ${currentUser}! Verified role: ${currentRole}`);
+    }catch(error){
+      authHeader="";currentUser="";currentRole="";authReady=false;
+      syncRoleUI();
+      err.textContent="Sign-in failed: "+error.message;
+    }
+  });
+}
+
+const tr=(en,hi)=>lang==="hi"?hi:en;
+const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function toast(title,detail="Action recorded."){
+  $("#toastRoot").innerHTML=`<div class="toast"><b>${esc(title)}</b><small>${esc(detail)}</small></div>`;
+  setTimeout(()=>$("#toastRoot").innerHTML="",3800);
+}
+
+function go(page){
+  if(page==="admin"&&currentRole!=="ADMIN"){
+    toast("Admin access required","Sign in with the admin account to access operations.");
+    return;
+  }
+  currentPage=page;
+  $("#crumb").textContent=pages[page]||page;
+  document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+  $("#sidebar").classList.remove("open");
+  render();
+}
+
+$("#nav").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-page]");
+  if(b) go(b.dataset.page);
+});
+
+$("#menuBtn").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
+$("#language").addEventListener("change",e=>{lang=e.target.value;render();});
+
+$("#signOutBtn").addEventListener("click",()=>{
+  authHeader="";currentUser="";currentRole="";authReady=false;
+  cases=[];auditLogs=[];trainData=null;diagnosisData=null;paymentCaseCreatedId=null;pnrAnalysisData=null;caseCreatedId=null;currentPage="home";
+  syncRoleUI();
+  render();
+  toast("Signed out","In-memory authentication credentials cleared.");
+});
+
+function head(kicker,title,sub,extra=""){
+  return `<div class="pagehead"><div><div class="eyebrow">${kicker}</div><h2>${title}</h2><p class="subtitle">${sub}</p></div>${extra}</div>`;
+}
+
+function btn(text,action,kind="primary",small=false){
+  return `<button class="btn ${kind}${small?" small":""}" data-action="${action}">${text}</button>`;
+}
+
+function stat(icon,num,label){
+  return `<div class="card"><div class="stat"><div class="stat-icon">${icon}</div><div><strong>${num}</strong><span>${label}</span></div></div></div>`;
+}
+
+function home(){
+  return `${head("PASSENGER ASSISTANCE","Travel help, without the guesswork.","Find travel alternatives, understand payment problems, and keep support requests organised.",'<span class="badge blue">● Connected to Backend</span>')}
+<div class="hero"><div class="eyebrow" style="color:#bde0ff">WELCOME TO RAILSAHAYAK</div><h2>${tr("A smoother journey starts with the right help.","सही मदद से आपकी यात्रा आसान बने।")}</h2><p>${tr("One place to understand railway travel issues and find the right next step.","रेल यात्रा की समस्या समझें और सही अगला कदम एक जगह पाएँ।")}</p><div class="actions">${btn("Find a train →","trains","white")} ${btn("Get payment help","payment","outline")}</div></div>
+<div class="grid cols3">${stat("☷",cases.length,"Support cases")}${stat("✓",cases.filter(c=>c.status==="Resolved").length,"Resolved in database")}${stat("◷","24/7","Advisory assistance")}</div>
+<div class="section-title"><h3>What do you need help with?</h3><span class="badge blue">Interactive Services</span></div>
+<div class="grid cols3">
+<button class="quick" data-action="trains"><span class="qicon">🚆</span><span><b>Smart Train Finder</b><small>Search routes and alternative journey options.</small></span></button>
+<button class="quick" data-action="payment"><span class="qicon">₹</span><span><b>Payment Help</b><small>Troubleshoot deducted, pending, or failed payments.</small></span></button>
+<button class="quick" data-action="pnr"><span class="qicon">▣</span><span><b>PNR Guide</b><small>Learn official status terms and check instructions.</small></span></button>
+<button class="quick" data-action="cases"><span class="qicon">✉</span><span><b>Complaint Help</b><small>Submit and track support cases with timeline.</small></span></button>
+${currentRole==="ADMIN"?'<button class="quick" data-action="admin"><span class="qicon">▦</span><span><b>Admin Dashboard</b><small>Review case metrics, status, and audit logs.</small></span></button>':''}
+<button class="quick" data-action="payment"><span class="qicon">🤝</span><span><b>Hindi Assistance</b><small>Step-by-step guidance in simple Hindi/English.</small></span></button>
+</div>
+<div class="section-title"><h3>Recent support cases</h3>${btn("View all cases →","cases","soft",true)}</div>
+<div class="card flat">${cases.length?cases.slice(0,3).map(caseRow).join(""):'<div class="empty">No cases recorded yet. Submit your first complaint under Complaint Help.</div>'}</div>
+<div class="footnote">RailSahayak is an intelligent railway assistance platform. Live railway transactions require official IRCTC authorization.</div>`;
+}
+
+function trains(){
+  const today = new Date().toISOString().split("T")[0];
+  return `${head("JOURNEY PLANNING","Smart Train Finder","Search sample train schedules and route alternatives powered by the backend API.",'<span class="badge blue">Prototype API Mode</span>')}
+<div class="alert info"><span>ℹ️</span><div><strong>Sample railway inventory:</strong> This prototype queries the backend endpoint <code>/api/v1/train-search</code>. Live railway transactions require official IRCTC authorization. All displayed schedules and availability are simulated for demonstration.</div></div>
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0">Where would you like to go?</h3>
+    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+      <small style="font-weight:700;color:var(--muted)">Popular routes:</small>
+      <button type="button" class="btn outline small quick-route" data-from="New Delhi" data-to="Patna Junction">NDLS ➔ PNBE</button>
+      <button type="button" class="btn outline small quick-route" data-from="New Delhi" data-to="Mumbai Central">NDLS ➔ MMCT</button>
+      <button type="button" class="btn outline small quick-route" data-from="Bengaluru City" data-to="MGR Chennai Central">SBC ➔ MAS</button>
+    </div>
+  </div>
+  <form id="trainForm">
+    <div class="formgrid">
+      <div class="field">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <label for="from">From station</label>
+          <button type="button" class="btn outline small" id="swapBtn" style="padding:2px 8px;font-size:11px" title="Swap From and To stations">⇄ Swap</button>
+        </div>
+        <input id="from" value="New Delhi" required placeholder="e.g. New Delhi">
+      </div>
+      <div class="field">
+        <label for="to">To station</label>
+        <input id="to" value="Patna Junction" required placeholder="e.g. Patna Junction">
+      </div>
+      <div class="field">
+        <label for="date">Journey date</label>
+        <input id="date" type="date" value="2026-10-25" min="${today}" required>
+      </div>
+      <div class="field">
+        <label for="class">Travel class preference</label>
+        <select id="class">
+          <option value="">All Classes (Any)</option>
+          <option value="3A" selected>3A · AC 3 Tier</option>
+          <option value="2A">2A · AC 2 Tier</option>
+          <option value="1A">1A · AC First Class</option>
+          <option value="SL">SL · Sleeper</option>
+          <option value="CC">CC · Chair Car</option>
+        </select>
+      </div>
+    </div>
+    <div id="trainError" class="alert warn hidden" style="margin-top:6px;margin-bottom:12px">
+      <span>⚠️</span><div id="trainErrorMsg"></div>
+    </div>
+    <div class="actions" style="margin-top:6px">
+      <button class="btn primary" type="submit" id="searchTrainBtn">⌕ Search sample trains</button>
+      <button class="btn outline" type="reset" id="resetTrain">Reset</button>
+    </div>
+  </form>
+</div>
+<div id="trainResults">${trainData?renderTrainResults(trainData):`<div class="empty"><div>🚉</div><b>Ready to explore routes</b><p style="margin-top:5px">Enter your journey details and search trains from the backend API.</p></div>`}</div>
+<div class="footnote">Demo schedules and availability are provided by the backend API with clear SAMPLE_DATA_ONLY tags.</div>`;
+}
+
+function renderTrainResults(data){
+  const results=data.results||[];
+  const isSample=data.mode==="SAMPLE_DATA_ONLY"||!data.liveRailwayIntegration;
+  const fromName=data.from||($("#from")?$("#from").value:"Origin");
+  const toName=data.to||($("#to")?$("#to").value:"Destination");
+  const dateStr=data.date||($("#date")?$("#date").value:"");
+  const reqClass=data.requestedClass||data.travelClass||($("#class")&&$("#class").value?$("#class").value:"All Classes");
+
+  if(results.length===0){
+    return `<div class="card" style="margin-top:18px">
+      <div class="empty">
+        <div style="font-size:36px">🔍</div>
+        <b style="font-size:16px">No sample trains found</b>
+        <p style="margin:8px auto;max-width:540px">No trains matched class preference <b>${esc(reqClass)}</b> for route <b>${esc(fromName)} → ${esc(toName)}</b> on ${esc(dateStr)} in prototype inventory.</p>
+        <div class="actions" style="justify-content:center;margin-top:14px">
+          <button class="btn primary small" id="showAllClassesBtn" type="button">Search all classes for this route</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  return `<div class="section-title">
+    <div>
+      <h3 style="margin:0">Available sample trains (${esc(fromName)} → ${esc(toName)})</h3>
+      <small style="color:var(--muted)">Date: ${esc(dateStr)} · Class: ${esc(reqClass)}</small>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+      <span class="badge blue">${results.length} option${results.length===1?"":"s"} found</span>
+      ${isSample?'<span class="badge" style="background:#fff2d9;color:#9b5c07">Sample Data Only</span>':""}
+    </div>
+  </div>
+  <div class="grid cols2">
+    ${results.map(t=>`
+      <div class="route-card">
+        <div class="route-top">
+          <div>
+            <div class="trainname">${esc(t.trainName)}</div>
+            <div class="traincode">${esc(t.trainCode)} · ${esc(t.type||"Express")}</div>
+          </div>
+          <span class="badge green">${esc(t.statusNote||("Sample: "+(t.sampleSeats||"Available")+" seats"))}</span>
+        </div>
+        <div class="route">
+          <div>
+            <strong>${esc(t.departure)}</strong>
+            <small>${esc(t.departureStation||fromName)}</small>
+          </div>
+          <div class="route-line"></div>
+          <div style="text-align:right">
+            <strong>${esc(t.arrival)}</strong>
+            <small>${esc(t.arrivalStation||toName)}</small>
+          </div>
+        </div>
+        <div class="route-bottom">
+          <span>${esc(t.duration||"Approx duration")} · Class <b>${esc(t.travelClass||t.class||"3A")}</b></span>
+          <button class="btn soft small" data-bookdemo="${esc(t.trainCode)}" data-trainname="${esc(t.trainName)}">Sample details</button>
+        </div>
+      </div>
+    `).join("")}
+  </div>
+  <div class="alert warn" style="margin-top:16px">
+    <span>⚠️</span>
+    <div>
+      <strong>Demonstration Notice:</strong> ${esc(data.notice||"Displayed schedules, train numbers, and availability are simulated for system evaluation and testing. Not connected to official Indian Railways or IRCTC live reservation systems. No ticket has been booked.")}
+    </div>
+  </div>`;
+}
+
+function payment(){
+  const today = new Date().toISOString().split("T")[0];
+  return `${head("PAYMENT SUPPORT","Guided payment troubleshooting","Select your payment scenario to receive safe, rule-based guidance generated by the backend API.",'<span class="badge blue">Rule-Based Advisor</span>')}
+<div class="alert warn"><span>🔒</span><div><strong>Zero-Trust Payment Security:</strong> RailSahayak never requests, accepts, or stores your UPI PIN, ATM PIN, OTP, passwords, or full debit/credit card numbers. Advisory service only; RailSahayak does not debit or refund funds.</div></div>
+<div class="grid cols2">
+<div class="card">
+  <h3>What happened during your transaction?</h3>
+  <form id="paymentForm">
+    <div class="field">
+      <label for="payPurpose">Payment purpose</label>
+      <select id="payPurpose">
+        <option value="TICKET_BOOKING" selected>Ticket booking</option>
+        <option value="CANCELLATION_REFUND">Ticket cancellation / Refund</option>
+        <option value="MEAL_OR_SERVICE">Catering / Retiring Room / Other service</option>
+        <option value="GENERAL_TRANSACTION">General transaction</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="payIssue">Payment status / Issue experienced</label>
+      <select id="payIssue">
+        <option value="deducted" selected>Money debited / deducted, ticket not confirmed</option>
+        <option value="pending">Payment is pending / processing at gateway</option>
+        <option value="failed">Payment failed, ticket not generated</option>
+        <option value="refund">Refund status unclear / delayed</option>
+        <option value="wallet">IRCTC eWallet balance or debit query</option>
+        <option value="successful">Payment successful, need booking verification</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="payMethod">Payment method used</label>
+      <select id="payMethod">
+        <option value="UPI" selected>UPI (Google Pay, PhonePe, Paytm, BHIM)</option>
+        <option value="CARD">Debit / Credit card</option>
+        <option value="NETBANKING">Net banking</option>
+        <option value="WALLET">IRCTC eWallet</option>
+        <option value="OTHER">Other method</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="payDate">Transaction date (optional)</label>
+      <input id="payDate" type="date" max="${today}" value="${today}">
+    </div>
+    <div class="field">
+      <label for="payRef">Transaction reference (optional)</label>
+      <input id="payRef" placeholder="e.g. UPI Ref / Bank RRN (masked automatically)" maxlength="60">
+      <span class="hint">🔒 Do not enter card numbers, PINs, OTPs, or CVVs. References are automatically masked.</span>
+    </div>
+    <div id="paymentError" class="alert warn hidden" style="margin-top:6px;margin-bottom:12px">
+      <span>⚠️</span><div id="paymentErrorMsg"></div>
+    </div>
+    <div class="actions" style="margin-top:10px">
+      <button class="btn primary" type="submit" id="diagnoseBtn">🧭 Diagnose Payment</button>
+      <button class="btn outline" type="reset" id="resetPayment">Reset</button>
+    </div>
+  </form>
+</div>
+<div class="card" id="diagnosis">${diagnosisData ? renderDiagnosis(diagnosisData) : `<div class="empty"><div>🧭</div><b>Guided next steps</b><p style="margin-top:5px">Select your transaction details on the left to receive actionable guidance from the backend API.</p></div>`}</div>
+</div>
+<div class="section-title"><h3>Official resolution channels</h3></div>
+<div class="grid cols2">
+  <div class="card flat">
+    <b>IRCTC eQuery Portal</b>
+    <p style="font-size:13px;margin:6px 0 13px">Official railway transaction reconciliation and refund ticketing portal.</p>
+    <a class="btn outline" href="https://equery.irctc.co.in/irctc_equery/" target="_blank" rel="noopener">Open IRCTC eQuery ↗</a>
+  </div>
+  <div class="card flat">
+    <b>Keep your transaction evidence ready</b>
+    <p style="font-size:13px;margin-top:6px">Always record Bank RRN, UPI Reference ID, and transaction timestamp. Never share screenshots exposing sensitive credentials or passwords.</p>
+  </div>
+</div>
+<div class="footnote">RailSahayak provides rule-based advisory assistance only and does not process financial debits or refunds.</div>`;
+}
+
+function renderDiagnosis(data){
+  const steps = data.steps || [];
+  const stepsHindi = data.stepsHindi || [];
+
+  const actionBadges = {
+    WAIT_FOR_SETTLEMENT: '<span class="badge" style="background:#fff2d9;color:#9b5c07">⏱ Recommended: Wait 3–5 Banking Days</span>',
+    WAIT_AND_MONITOR: '<span class="badge" style="background:#fff2d9;color:#9b5c07">⏱ Recommended: Wait 15–30 Mins</span>',
+    RETRY_OR_DISPUTE: '<span class="badge red">⚠️ Action: Check Account & Retry</span>',
+    CHECK_IRCTC_EQUERY: '<span class="badge blue">🔍 Action: Track on IRCTC eQuery</span>',
+    VERIFY_WALLET_TERMS: '<span class="badge blue">ℹ️ Action: Review eWallet Terms</span>',
+    CHECK_BOOKING_HISTORY: '<span class="badge green">✓ Action: Check Booked Ticket History</span>',
+    GENERAL_RECONCILIATION: '<span class="badge">ℹ️ Action: General Reconciliation</span>'
+  };
+  const actionBadge = actionBadges[data.actionRecommendation] || '<span class="badge blue">Diagnostic Guidance</span>';
+
+  return `
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap">
+    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+      <span class="badge blue">Backend Diagnosis</span>
+      ${actionBadge}
+    </div>
+    <span class="badge" style="background:#f0f4f9;color:var(--muted)">DEMO / PROTOTYPE</span>
+  </div>
+
+  <h3 style="margin:14px 0 4px">${esc(data.title)}</h3>
+  ${data.titleHindi ? `<p style="font-size:12px;color:var(--blue);font-weight:600;margin-bottom:12px">${esc(data.titleHindi)}</p>` : ""}
+
+  <div class="card flat" style="background:#f5f9ff;border:1px solid #dce8f4;padding:12px;margin-bottom:14px">
+    <div style="font-size:12px;font-weight:700;color:var(--ink)">Advisor Summary:</div>
+    <p style="font-size:13px;color:var(--ink);margin-top:3px">${esc(data.advice)}</p>
+    ${data.adviceHindi ? `<p style="font-size:12px;color:var(--muted);margin-top:3px">${esc(data.adviceHindi)}</p>` : ""}
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:14px">
+    <div><span style="color:var(--muted)">Method:</span> <b>${esc(data.paymentMethod||"UPI")}</b></div>
+    <div><span style="color:var(--muted)">Purpose:</span> <b>${esc(data.purpose||"TICKET_BOOKING")}</b></div>
+    <div><span style="color:var(--muted)">Reference:</span> <code>${esc(data.maskedReference||"None")}</code></div>
+    <div><span style="color:var(--muted)">Date:</span> <b>${esc(data.transactionDate||"Not specified")}</b></div>
+  </div>
+
+  <h4 style="font-size:13px;margin:12px 0 8px">Actionable Steps to Follow:</h4>
+  <div class="steps">
+    ${steps.map((step, i) => `
+      <div class="step">
+        <span class="step-num">${i + 1}</span>
+        <div>
+          <p style="margin:0">${esc(step)}</p>
+          ${stepsHindi[i] ? `<small style="color:var(--muted);display:block;margin-top:2px">${esc(stepsHindi[i])}</small>` : ""}
+        </div>
+      </div>
+    `).join("")}
+  </div>
+
+  <div class="alert warn" style="margin-top:14px;margin-bottom:14px">
+    <span>⚠️</span>
+    <div>
+      <strong>Notice:</strong> ${esc(data.warning || "Zero-Trust Payment Security: RailSahayak does NOT initiate, process, or verify financial transactions.")}
+    </div>
+  </div>
+
+  ${paymentCaseCreatedId ? `
+    <div class="alert success" style="margin-top:12px">
+      <span>✅</span>
+      <div>
+        <strong>Official Case Created: ${esc(paymentCaseCreatedId)}</strong>
+        <p style="margin-top:3px;font-size:12px">Saved persistently in PostgreSQL database. Review updates anytime in Complaint Help.</p>
+        <div style="margin-top:8px">
+          <button class="btn primary small" data-viewcreatedcase="${esc(paymentCaseCreatedId)}">View Case Timeline →</button>
+        </div>
+      </div>
+    </div>
+  ` : `
+    <div class="actions" style="margin-top:14px">
+      ${currentRole === "PASSENGER"
+        ? `<button class="btn primary small" id="openCaseConfirmModal">Create support case with these details</button>`
+        : `<small style="color:var(--muted)">Signed in as admin. Switch to passenger account to file support complaints.</small>`
+      }
+      <a class="btn outline small" href="https://equery.irctc.co.in/irctc_equery/" target="_blank" rel="noopener">Open official eQuery ↗</a>
+    </div>
+  `}
+  `;
+}
+
+function pnr(){
+  return `${head("PNR ADVISORY","Understand your PNR status & railway rules","Official procedural guide for Indian Railways reservation codes, charting timelines, and passenger travel rights.",'<span class="badge blue">Procedural Advisor</span>')}
+<div class="alert warn"><span>🔒</span><div><strong>Zero-Trust Advisory Notice:</strong> RailSahayak does NOT query live CRIS/PRS databases or access personal booking records. Real-time PNR confirmation, coach/berth allocation, and chart status must be verified exclusively through official Indian Railways channels. Mode: <b>GUIDANCE_ONLY</b>.</div></div>
+<div class="grid cols2">
+<div class="card">
+  <h3>Analyze PNR & Reservation Status</h3>
+  <form id="pnrForm">
+    <div class="field">
+      <label for="pnrInput">10-Digit PNR Number</label>
+      <input id="pnrInput" inputmode="numeric" maxlength="10" placeholder="e.g. 2345678901" pattern="[0-9]{10}" required>
+      <span class="hint">Located on the top-left of physical tickets or in IRCTC confirmation SMS/email.</span>
+    </div>
+    <div class="field">
+      <label for="pnrStatusCode">Ticket reservation status code (optional)</label>
+      <select id="pnrStatusCode">
+        <option value="GENERAL_GUIDE" selected>General Guide / Unsure of status</option>
+        <option value="CNF">CNF — Confirmed (Confirmed berth/seat)</option>
+        <option value="RAC">RAC — Reservation Against Cancellation (Guaranteed sitting berth)</option>
+        <option value="GNWL">GNWL — General Waiting List (Highest confirmation priority)</option>
+        <option value="RLWL">RLWL — Remote Location Waiting List (Intermediate stations)</option>
+        <option value="PQWL">PQWL — Pooled Quota Waiting List (En-route stations)</option>
+        <option value="TQWL">TQWL — Tatkal Waiting List (Tatkal cancellations only)</option>
+        <option value="CAN">CAN — Cancelled (Refund routed to source)</option>
+        <option value="TDR">TDR — Ticket Deposit Receipt Filed (Claim under review)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="pnrQuery">Specific question (optional)</label>
+      <input id="pnrQuery" placeholder="e.g. Can I board with waitlisted e-ticket? When is chart prepared?" maxlength="120">
+    </div>
+    <div id="pnrError" class="alert warn hidden" style="margin-top:6px;margin-bottom:12px">
+      <span>⚠️</span>
+      <div id="pnrErrorMsg"></div>
+    </div>
+    <div class="actions" style="margin-top:14px">
+      <button class="btn primary" type="submit">🔍 Explain PNR & Rules</button>
+      <button class="btn outline" type="reset">Clear</button>
+    </div>
+  </form>
+  <div id="pnrResult" style="margin-top:16px">
+    ${pnrAnalysisData ? renderPnrResult(pnrAnalysisData) : `
+      <div class="empty">
+        <div>▣</div>
+        <b>Ready to analyze PNR status</b>
+        <p style="margin-top:5px">Enter your 10-digit PNR and ticket status to view official reservation rules.</p>
+      </div>
+    `}
+  </div>
+</div>
+
+<div class="card">
+  <h3>What is a PNR & Where to find it?</h3>
+  <div class="card flat" style="background:#f5f9ff;border:1px solid #dce8f4;padding:12px;margin-bottom:14px">
+    <b style="color:var(--navy)">Passenger Name Record (10 Digits)</b>
+    <p style="font-size:13px;color:var(--ink);margin-top:4px">
+      A unique 10-digit identifier generated by the Centre for Railway Information Systems (CRIS) Passenger Reservation System (PRS) for every passenger or group booked under one transaction.
+    </p>
+  </div>
+  <div style="font-size:13px;line-height:1.6">
+    <div style="margin-bottom:10px">
+      <b>📍 Physical Window Ticket:</b> Printed at the top-left corner of the ticket above the journey date.
+    </div>
+    <div style="margin-bottom:10px">
+      <b>📱 IRCTC E-Ticket:</b> Shown prominently in the top reservation details table, the booking confirmation SMS from <code>IRCTCi</code>, and the confirmation PDF/email.
+    </div>
+    <div style="margin-bottom:10px">
+      <b>🔢 First 3 Digits indicate PRS Zone:</b>
+      <ul style="margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)">
+        <li><b>1xx:</b> CRIS / Central Railway (Mumbai CST)</li>
+        <li><b>2xx / 3xx:</b> Northern Railway (New Delhi PRS)</li>
+        <li><b>4xx / 5xx:</b> Western Railway (Mumbai Central PRS)</li>
+        <li><b>6xx / 7xx:</b> Southern Railway (Chennai Central PRS)</li>
+        <li><b>8xx / 9xx:</b> Eastern Railway (Kolkata PRS)</li>
+      </ul>
+      <small style="color:var(--muted);display:block;margin-top:4px">The remaining 7 digits are randomly generated reservation identification numbers.</small>
+    </div>
+  </div>
+
+  <h4 style="margin:16px 0 10px;font-size:14px">Standard Reservation Status Codes</h4>
+  <div class="checkrow"><span class="badge green">CNF</span><div><b>Confirmed (CNF)</b><small>Seat/berth confirmed. Coach and berth number finalized after chart preparation (usually 4 hrs before departure).</small></div></div>
+  <div class="checkrow"><span class="badge blue">RAC</span><div><b>Reservation Against Cancellation (RAC)</b><small>Guaranteed boarding entitlement with shared sitting accommodation (side-lower). Full berth provided if cancellations occur.</small></div></div>
+  <div class="checkrow"><span class="badge">WL</span><div><b>Waitlisted (GNWL / RLWL / PQWL / TQWL)</b><small>Waitlisted e-tickets are automatically cancelled upon charting. Boarding reserved coaches on WL e-tickets is illegal.</small></div></div>
+  <div class="checkrow"><span class="badge red">CAN</span><div><b>Cancelled (CAN)</b><small>Ticket cancelled. Refund processed automatically to source payment account.</small></div></div>
+</div>
+</div>
+
+<div class="section-title"><h3>Official verification channels</h3></div>
+<div class="grid cols2">
+  <div class="card flat">
+    <b>Official IRCTC PNR Enquiry</b>
+    <p style="font-size:13px;margin:6px 0 12px">Official portal to verify real-time live PNR confirmation and charting status.</p>
+    <a class="btn outline" href="https://www.irctc.co.in/" target="_blank" rel="noopener">Open IRCTC Portal ↗</a>
+  </div>
+  <div class="card flat">
+    <b>Indian Railways PNR Enquiry (indianrail.gov.in)</b>
+    <p style="font-size:13px;margin:6px 0 12px">Official Ministry of Railways PRS enquiry server for live PNR status.</p>
+    <a class="btn outline" href="https://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html" target="_blank" rel="noopener">Open IndianRail Portal ↗</a>
+  </div>
+  <div class="card flat">
+    <b>SMS & Phone Helpline: 139</b>
+    <p style="font-size:13px;margin:6px 0 12px">Send SMS <code>PNR &lt;10-digit PNR&gt;</code> to <b>139</b> or dial 139 for 24/7 IVR & agent support.</p>
+    <a class="btn outline" href="tel:139">Call Railway Helpline 139 ↗</a>
+  </div>
+  <div class="card flat">
+    <b>National Train Enquiry System (NTES) & RailMadad</b>
+    <p style="font-size:13px;margin:6px 0 12px">Check live train running delays, platform numbers, or file on-train grievances.</p>
+    <a class="btn outline" href="https://enquiry.indianrailways.gov.in/" target="_blank" rel="noopener">Open NTES ↗</a>
+  </div>
+</div>
+<div class="footnote">PNR status definitions are derived from Indian Railways reservation rules. Live status must be confirmed officially.</div>`;
+}
+
+function renderPnrResult(data){
+  const badgeMap = {
+    CNF: '<span class="badge green">CNF · Confirmed</span>',
+    RAC: '<span class="badge blue">RAC · Guaranteed Boarding</span>',
+    GNWL: '<span class="badge" style="background:#fff2d9;color:#9b5c07">GNWL · General Waitlist</span>',
+    RLWL: '<span class="badge" style="background:#fff2d9;color:#9b5c07">RLWL · Remote Waitlist</span>',
+    PQWL: '<span class="badge" style="background:#fff2d9;color:#9b5c07">PQWL · Pooled Waitlist</span>',
+    TQWL: '<span class="badge red">TQWL · Tatkal Waitlist</span>',
+    CAN: '<span class="badge red">CAN · Cancelled</span>',
+    TDR: '<span class="badge blue">TDR · Claim Lodged</span>',
+    GENERAL_GUIDE: '<span class="badge blue">Procedural Guide</span>'
+  };
+  const statusBadge = badgeMap[data.statusCategory] || `<span class="badge blue">${esc(data.statusCategory)}</span>`;
+  const isWaitlist = ["GNWL","RLWL","PQWL","TQWL"].includes(data.statusCategory);
+  const isCnfOrRac = ["CNF","RAC"].includes(data.statusCategory);
+
+  const guidelines = data.guidelines || [];
+  const guidelinesHindi = data.guidelinesHindi || [];
+
+  return `
+  <div style="border-top:1px solid var(--line);padding-top:16px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap">
+      <div>
+        <div class="eyebrow">${esc(data.prsZone || "PRS Passenger System")}</div>
+        <h3 style="margin:4px 0 2px">${esc(data.statusTitle)}</h3>
+        ${data.statusTitleHindi ? `<small style="font-weight:600;color:var(--blue)">${esc(data.statusTitleHindi)}</small>` : ""}
+      </div>
+      <div>${statusBadge}</div>
+    </div>
+
+    <div style="margin-top:14px">
+      ${isWaitlist ? `
+        <div class="alert warn" style="margin-bottom:14px">
+          <span>⛔</span>
+          <div>
+            <strong>Travel Eligibility:</strong> ${esc(data.travelEligibility)}
+            ${data.travelEligibilityHindi ? `<small style="display:block;margin-top:2px;color:var(--muted)">${esc(data.travelEligibilityHindi)}</small>` : ""}
+          </div>
+        </div>
+      ` : isCnfOrRac ? `
+        <div class="alert success" style="margin-bottom:14px">
+          <span>✅</span>
+          <div>
+            <strong>Travel Eligibility:</strong> ${esc(data.travelEligibility)}
+            ${data.travelEligibilityHindi ? `<small style="display:block;margin-top:2px;color:var(--muted)">${esc(data.travelEligibilityHindi)}</small>` : ""}
+          </div>
+        </div>
+      ` : `
+        <div class="alert info" style="margin-bottom:14px">
+          <span>ℹ️</span>
+          <div>
+            <strong>Travel Eligibility:</strong> ${esc(data.travelEligibility)}
+            ${data.travelEligibilityHindi ? `<small style="display:block;margin-top:2px;color:var(--muted)">${esc(data.travelEligibilityHindi)}</small>` : ""}
+          </div>
+        </div>
+      `}
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:14px">
+      <div><span style="color:var(--muted)">Masked PNR:</span> <code>${esc(data.maskedPnr || "Not provided")}</code></div>
+      <div><span style="color:var(--muted)">PRS Server:</span> <b>${esc(data.prsZone || "Standard PRS")}</b></div>
+      <div><span style="color:var(--muted)">Integration Mode:</span> <b>${esc(data.mode || "GUIDANCE_ONLY")}</b></div>
+      <div><span style="color:var(--muted)">Live CRIS Access:</span> <span class="badge" style="background:#fff2d9;color:#9b5c07;padding:2px 6px;font-size:10px">${data.liveRailwayIntegration ? "Enabled" : "Disabled (Demo Mode)"}</span></div>
+    </div>
+
+    <div class="card flat" style="background:#f8fbff;border:1px solid #dce8f4;padding:12px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:var(--ink)">Status Explanation:</div>
+      <p style="font-size:13px;color:var(--ink);margin-top:4px">${esc(data.statusExplanation)}</p>
+      ${data.statusExplanationHindi ? `<p style="font-size:12px;color:var(--muted);margin-top:3px">${esc(data.statusExplanationHindi)}</p>` : ""}
+    </div>
+
+    <div class="card flat" style="background:#fff;border:1px solid var(--line);padding:12px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:var(--ink)">⏱ Chart Preparation Rules:</div>
+      <p style="font-size:12px;color:var(--ink);margin-top:4px">${esc(data.chartRule)}</p>
+      ${data.chartRuleHindi ? `<small style="color:var(--muted);display:block;margin-top:2px">${esc(data.chartRuleHindi)}</small>` : ""}
+    </div>
+
+    <h4 style="font-size:13px;margin:12px 0 8px">Key Railway Guidelines:</h4>
+    <div class="steps">
+      ${guidelines.map((g, i) => `
+        <div class="step">
+          <span class="step-num">${i + 1}</span>
+          <div>
+            <p style="margin:0">${esc(g)}</p>
+            ${guidelinesHindi[i] ? `<small style="color:var(--muted);display:block;margin-top:2px">${esc(guidelinesHindi[i])}</small>` : ""}
+          </div>
+        </div>
+      `).join("")}
+    </div>
+
+    <div class="alert warn" style="margin-top:14px;margin-bottom:14px">
+      <span>⚠️</span>
+      <div>
+        <strong>Notice:</strong> ${esc(data.notice || "RailSahayak is a passenger assistance guide and does not query live reservation servers.")}
+      </div>
+    </div>
+
+    <div class="actions" style="margin-top:14px">
+      <a class="btn primary small" href="https://www.irctc.co.in/" target="_blank" rel="noopener">Check Live PNR on IRCTC ↗</a>
+      <a class="btn outline small" href="https://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html" target="_blank" rel="noopener">IndianRail.gov.in ↗</a>
+      <a class="btn outline small" href="https://railmadad.indianrailways.gov.in/" target="_blank" rel="noopener">RailMadad Portal ↗</a>
+    </div>
+  </div>`;
+}
+
+function caseRow(c){
+  return `<div class="case" data-casedetail="${esc(c.id)}"><div><b>${esc(c.id)} · ${esc(c.category)}</b><small>${esc(c.date)} · ${esc(c.detail)}</small></div><span class="badge ${c.status==="Resolved"?"green":c.status==="Open"?"blue":""}">${esc(c.status)}</span></div>`;
+}
+
+function casesPage(){
+  let filtered=cases;
+  if(caseFilter!=="ALL") filtered=filtered.filter(c=>c.rawStatus===caseFilter);
+  if(caseSearch){
+    const q=caseSearch.toLowerCase();
+    filtered=filtered.filter(c=>c.id.toLowerCase().includes(q)||c.category.toLowerCase().includes(q)||c.detail.toLowerCase().includes(q));
+  }
+
+  return `${head("SUPPORT WORKSPACE","Complaint help & case tracking","Create, search, and track support cases stored persistently in the PostgreSQL database.",'<span class="badge blue">Database Connected</span>')}
+<div class="alert info"><span>ℹ️</span><div><strong>Internal Support System:</strong> Complaints created here are tracked inside RailSahayak's local PostgreSQL database. RailSahayak does NOT forward complaints directly to IRCTC or external railway offices. For immediate on-train assistance, please dial <b>139</b> or use the official <b>RailMadad</b> portal.</div></div>
+<div class="grid cols2">
+<div class="card"><h3>Create a new support case</h3><form id="caseForm">
+<div class="field"><label for="caseCategory">Problem category</label>
+<select id="caseCategory">
+  <option value="Payment status unclear">Payment status unclear</option>
+  <option value="Refund follow-up">Refund follow-up</option>
+  <option value="Train information / alternative">Train information / alternative</option>
+  <option value="Booking error">Booking error</option>
+  <option value="Coach cleanliness & hygiene">Coach cleanliness & hygiene</option>
+  <option value="Catering & food quality">Catering & food quality</option>
+  <option value="Tatkal booking issue">Tatkal booking issue</option>
+  <option value="Accessibility assistance">Accessibility assistance</option>
+  <option value="Other railway enquiry">Other railway enquiry</option>
+</select>
+</div>
+<div class="field"><label for="caseDesc">Describe the issue</label><textarea id="caseDesc" required maxlength="500" minlength="10" placeholder="Explain what happened. Never include passwords, OTPs, or financial secrets."></textarea><span class="hint">Please provide at least 10 characters (max 500). Sensitive credentials are prohibited.</span></div>
+<div class="field"><label for="caseContact">Preferred follow-up</label><select id="caseContact"><option>Show updates in this dashboard</option><option>Email advisory (simulated)</option></select></div>
+<div id="caseError" class="alert warn hidden" style="margin-top:6px;margin-bottom:12px"><span>⚠️</span><div id="caseErrorMsg"></div></div>
+<div id="caseSuccessAlert" class="alert success ${caseCreatedId ? '' : 'hidden'}" style="margin-top:12px">
+  <span>✅</span>
+  <div>
+    <strong>Official Case Created: <span id="caseSuccessId">${caseCreatedId ? esc(caseCreatedId) : ''}</span></strong>
+    <p style="margin-top:3px;font-size:12px">Saved persistently in PostgreSQL database. Review timeline updates below.</p>
+    <div style="margin-top:8px">
+      <button class="btn primary small" id="viewCreatedCaseBtn" type="button" data-viewcase="${caseCreatedId ? esc(caseCreatedId) : ''}">View Case Timeline →</button>
+    </div>
+  </div>
+</div>
+${currentRole==="PASSENGER"?'<button class="btn primary" id="submitCaseBtn" type="submit">Submit complaint</button>':'<p class="hint">Admin accounts cannot submit complaints directly; use a passenger account.</p>'}
+</form></div>
+<div class="card"><h3>Case tracking workflow</h3><div class="steps">
+<div class="step"><span class="step-num">1</span><div><b>Submit description</b><p>Case is assigned a unique reference (RS-XXXXXX) in PostgreSQL.</p></div></div>
+<div class="step"><span class="step-num">2</span><div><b>Audit & review</b><p>Admin operations team reviews the queue and updates investigation notes.</p></div></div>
+<div class="step"><span class="step-num">3</span><div><b>Resolution tracking</b><p>Track full event audit history with timestamps and status updates.</p></div></div>
+</div><div class="alert info" style="margin-top:18px"><span>ℹ️</span><div>For immediate emergency assistance on trains, dial Indian Railways Helpline <b>139</b> or use <b>RailMadad</b>.</div></div>
+<a class="btn outline" href="https://railmadad.indianrailways.gov.in/" target="_blank" rel="noopener">Open RailMadad Portal ↗</a>
+</div></div>
+
+<div class="section-title">
+  <h3>${currentRole==="ADMIN"?"All support cases in queue":"My support cases"}</h3>
+  <div class="actions">
+    <input id="caseSearchInput" placeholder="Search case ID or keyword…" value="${esc(caseSearch)}" style="padding:6px 10px;border:1px solid #d7e2ee;border-radius:8px;font-size:12px;width:180px">
+    <select id="caseFilterSelect" style="padding:6px 10px;border:1px solid #d7e2ee;border-radius:8px;font-size:12px">
+      <option value="ALL" ${caseFilter==="ALL"?"selected":""}>All statuses</option>
+      <option value="OPEN" ${caseFilter==="OPEN"?"selected":""}>Open</option>
+      <option value="IN_PROGRESS" ${caseFilter==="IN_PROGRESS"?"selected":""}>In progress</option>
+      <option value="RESOLVED" ${caseFilter==="RESOLVED"?"selected":""}>Resolved</option>
+    </select>
+    <button class="btn outline small" id="refreshCases" type="button">Refresh</button>
+    <span class="badge">${filtered.length} of ${cases.length} cases</span>
+  </div>
+</div>
+<div class="card flat" id="caseList">${filtered.length?filtered.map(caseRow).join(""):'<div class="empty">No matching cases found.</div>'}</div>
+<div class="footnote">Click on any case card to view its complete audit event history and timeline notes.</div>`;
+}
+
+function admin(){
+  let open=cases.filter(c=>c.status!=="Resolved").length,res=cases.filter(c=>c.status==="Resolved").length;
+  let categories={
+    Payment:cases.filter(c=>/payment|refund/i.test(c.category)).length,
+    Journey:cases.filter(c=>/train|alternative/i.test(c.category)).length,
+    Booking:cases.filter(c=>/booking/i.test(c.category)).length,
+    Other:cases.filter(c=>!/payment|refund|train|alternative|booking/i.test(c.category)).length
+  };
+  let max=Math.max(1,...Object.values(categories));
+
+  return `${head("OPERATIONS DASHBOARD","Admin Operations & Audit Console","Operational metrics, case queue assignment, and server-side audit logs.",'<span class="badge green">Role: ADMIN Authorized</span>')}
+<div class="grid cols4">
+${stat("✉",cases.length,"Total cases")}
+${stat("◷",open,"Active / pending")}
+${stat("✓",res,"Resolved cases")}
+${stat("％",cases.length?Math.round(res/cases.length*100)+"%":"0%","Resolution rate")}
+</div>
+
+<div class="grid cols2" style="margin-top:17px">
+<div class="card"><h3>Cases by category</h3>
+${Object.entries(categories).map(([k,v])=>`<div class="bar-row"><span>${k}</span><div class="bar"><span style="width:${v/max*100}%"></span></div><b>${v}</b></div>`).join("")}
+<p style="font-size:11px;margin-top:15px">Calculated dynamically from PostgreSQL database.</p></div>
+
+<div class="card"><h3>System health & security status</h3>
+<div class="checkrow"><span class="badge green">Active</span><div><b>Spring Security RBAC</b><small>Role-based authorization enforced server-side.</small></div></div>
+<div class="checkrow"><span class="badge green">Connected</span><div><b>PostgreSQL 16 Database</b><small>Flyway migrations applied; audit logging active.</small></div></div>
+<div class="checkrow"><span class="badge green">Port 8081</span><div><b>Embedded Web Server</b><small>Spring Boot REST API with Tomcat 10.</small></div></div>
+<div class="checkrow"><span class="badge blue">Safe Prototype</span><div><b>External Gateways</b><small>Read-only / mock data protection active.</small></div></div>
+</div></div>
+
+<div class="section-title"><h3>Case management queue</h3><button class="btn outline small" id="refreshAdminCases">Refresh queue</button></div>
+<div class="card flat"><div class="tablewrap"><table><thead><tr><th>Case ID</th><th>Owner</th><th>Category</th><th>Created</th><th>Status</th><th>Action</th></tr></thead><tbody>
+${cases.map(c=>`<tr><td><b>${esc(c.id)}</b></td><td>${esc(c.owner)}</td><td>${esc(c.category)}</td><td>${esc(c.date)}</td><td><span class="badge ${c.status==="Resolved"?"green":c.status==="Open"?"blue":""}">${esc(c.status)}</span></td><td>
+<div style="display:flex;gap:6px">
+<button class="btn soft small" data-casedetail="${esc(c.id)}">Timeline</button>
+<button class="btn primary small" data-adminstatus="${esc(c.id)}">Update status</button>
+</div></td></tr>`).join("")}
+</tbody></table></div></div>
+
+<div class="section-title"><h3>Audit log trail (Latest 100 events)</h3><button class="btn outline small" id="refreshAudit">Refresh audit logs</button></div>
+<div class="card flat"><div class="tablewrap"><table><thead><tr><th>Timestamp</th><th>Actor</th><th>Action</th><th>Resource Type</th><th>Resource ID</th><th>Detail</th></tr></thead><tbody>
+${auditLogs.length?auditLogs.map(l=>`<tr><td><small>${esc(apiDate(l.createdAt))}</small></td><td><b>${esc(l.actor)}</b></td><td><span class="badge blue">${esc(l.action)}</span></td><td>${esc(l.resourceType)}</td><td><code>${esc(l.resourceId||"—")}</code></td><td>${esc(l.detail)}</td></tr>`).join(""):`<tr><td colspan="6" class="empty">No audit records loaded yet.</td></tr>`}
+</tbody></table></div></div>
+<div class="footnote">Server-side audit trail records all creation, state transitions, and access events in the PostgreSQL <code>audit_logs</code> table.</div>`;
+}
+
+function openAdminStatusModal(caseId){
+  if(currentRole!=="ADMIN") return;
+  const c = cases.find(item=>item.id===caseId);
+  if(!c) return;
+
+  $("#modalRoot").innerHTML = `
+  <div class="modal-overlay" id="adminStatusOverlay">
+    <div class="modal">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+        <div>
+          <div class="eyebrow">CASE OPERATIONS</div>
+          <h3 style="margin:4px 0">Update Status: ${esc(c.id)}</h3>
+          <small style="color:var(--muted)">Category: <b>${esc(c.category)}</b> · Owner: <b>${esc(c.owner)}</b></small>
+        </div>
+        <button class="btn outline small" id="closeAdminStatusModal">✕</button>
+      </div>
+
+      <form id="adminStatusForm">
+        <div class="field">
+          <label for="adminStatusSelect">New Case Status</label>
+          <select id="adminStatusSelect">
+            <option value="OPEN" ${c.rawStatus==="OPEN"?"selected":""}>OPEN — Under initial triage</option>
+            <option value="IN_PROGRESS" ${c.rawStatus==="IN_PROGRESS"?"selected":""}>IN_PROGRESS — Active investigation</option>
+            <option value="RESOLVED" ${c.rawStatus==="RESOLVED"?"selected":""}>RESOLVED — Resolution provided & closed</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="adminStatusNote">Administrative Investigation / Resolution Note</label>
+          <textarea id="adminStatusNote" required maxlength="500" placeholder="e.g. Verified transaction logs with bank gateway. Refund credited to user account.">${esc(c.rawStatus)} -> updated by admin console</textarea>
+          <span class="hint">This note will be added to the case event timeline and persisted in the server audit trail.</span>
+        </div>
+
+        <div class="actions" style="margin-top:16px;justify-content:flex-end">
+          <button type="button" class="btn outline" id="cancelAdminStatus">Cancel</button>
+          <button type="submit" class="btn primary" id="submitAdminStatusBtn">Save Status Update</button>
+        </div>
+      </form>
+    </div>
+  </div>`;
+
+  $("#closeAdminStatusModal").addEventListener("click", () => $("#modalRoot").innerHTML = "");
+  $("#cancelAdminStatus").addEventListener("click", () => $("#modalRoot").innerHTML = "");
+  $("#adminStatusOverlay").addEventListener("click", e => {
+    if(e.target.id === "adminStatusOverlay") $("#modalRoot").innerHTML = "";
+  });
+
+  $("#adminStatusForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const newStatus = $("#adminStatusSelect").value;
+    const note = $("#adminStatusNote").value.trim();
+    const btn = $("#submitAdminStatusBtn");
+    btn.disabled = true;
+    btn.textContent = "Updating status…";
+
+    try {
+      const updated = await api("/admin/cases/" + encodeURIComponent(caseId) + "/status", {
+        method: "PATCH",
+        body: JSON.stringify({ status: newStatus, note: note || (c.rawStatus + " -> " + newStatus) })
+      });
+      await loadCases();
+      await loadAuditLogs();
+      $("#modalRoot").innerHTML = "";
+      render();
+      toast("Case " + updated.id + " updated", "Status changed to " + newStatus + " and audit logged.");
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = "Save Status Update";
+      toast("Failed to update status", err.message);
+    }
+  });
+}
+
+function render(){
+  const root=$("#content");
+  if(!authReady){
+    root.innerHTML=loginView();
+    wireLogin();
+    return;
+  }
+  if(currentPage==="admin"&&currentRole!=="ADMIN") currentPage="home";
+  root.innerHTML=({home,trains,payment,pnr,cases:casesPage,admin})[currentPage]();
+  wirePage();
+  syncRoleUI();
+  if(lang==="hi") applyHindi();
+}
+
+function applyHindi(){
+  const map={"Overview":"मुख्य पृष्ठ","Smart Train Finder":"ट्रेन खोजें","Payment Help":"पेमेंट सहायता","PNR Guide":"PNR गाइड","Complaint Help":"शिकायत सहायता","Admin Dashboard":"एडमिन डैशबोर्ड"};
+  $("#crumb").textContent=map[pages[currentPage]]||pages[currentPage];
+}
+
+async function showCaseModal(caseId){
+  try{
+    const res=await api("/cases/"+encodeURIComponent(caseId));
+    const sc=res.supportCase;
+    const events=res.events||[];
+
+    $("#modalRoot").innerHTML=`
+    <div class="modal-overlay" id="caseModalOverlay">
+      <div class="modal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
+          <div>
+            <div class="eyebrow">${esc(sc.category)}</div>
+            <h3 style="margin:4px 0">${esc(sc.id)}</h3>
+            <small style="color:var(--muted)">Filed by <b>${esc(sc.owner)}</b> · ${esc(apiDate(sc.createdAt))}</small>
+          </div>
+          <span class="badge ${sc.status==="RESOLVED"?"green":sc.status==="OPEN"?"blue":""}">${esc(sc.status)}</span>
+        </div>
+        <div class="card flat" style="background:#f8fbff;border:1px solid #dce8f4;margin-bottom:18px">
+          <b>Description:</b>
+          <p style="margin-top:6px;font-size:13px;color:var(--ink)">${esc(sc.description)}</p>
+        </div>
+        <h4 style="margin:0 0 10px;font-size:14px">Event & Status Timeline</h4>
+        <div class="steps">
+          ${events.map((e,i)=>`
+            <div class="step">
+              <span class="step-num">${i+1}</span>
+              <div>
+                <b>${esc(e.eventType)} · <small>${esc(e.actor)}</small></b>
+                <p style="font-size:12px;margin:2px 0">${esc(e.note||"No additional note")}</p>
+                <small style="color:var(--muted);font-size:11px">${esc(apiDate(e.createdAt))}</small>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+        <div class="actions" style="margin-top:20px;justify-content:flex-end">
+          <button class="btn outline" id="closeCaseModal">Close</button>
+        </div>
+      </div>
+    </div>`;
+
+    $("#closeCaseModal").addEventListener("click",()=>$("#modalRoot").innerHTML="");
+    $("#caseModalOverlay").addEventListener("click",e=>{
+      if(e.target.id==="caseModalOverlay") $("#modalRoot").innerHTML="";
+    });
+  }catch(err){
+    toast("Could not load case details",err.message);
+  }
+}
+
+function wirePage(){
+  const tf=$("#trainForm");
+  if(tf){
+    // Swap button
+    const swapBtn=$("#swapBtn");
+    if(swapBtn){
+      swapBtn.addEventListener("click",()=>{
+        const fInput=$("#from");
+        const tInput=$("#to");
+        if(fInput&&tInput){
+          const temp=fInput.value;
+          fInput.value=tInput.value;
+          tInput.value=temp;
+          toast("Stations swapped",`${fInput.value} ⇄ ${tInput.value}`);
+        }
+      });
+    }
+
+    // Quick route buttons
+    document.querySelectorAll(".quick-route").forEach(qb=>{
+      qb.addEventListener("click",()=>{
+        const fInput=$("#from");
+        const tInput=$("#to");
+        if(fInput&&tInput){
+          fInput.value=qb.dataset.from;
+          tInput.value=qb.dataset.to;
+          toast("Route selected",`${fInput.value} → ${tInput.value}`);
+        }
+      });
+    });
+
+    tf.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const errBox=$("#trainError");
+      const errMsg=$("#trainErrorMsg");
+      if(errBox) errBox.classList.add("hidden");
+
+      const from=($("#from")?$("#from").value:"").trim();
+      const to=($("#to")?$("#to").value:"").trim();
+      const date=($("#date")?$("#date").value:"").trim();
+      const travelClass=($("#class")?$("#class").value:"").trim();
+
+      // Client-side validation: Required fields
+      if(!from||!to||!date){
+        const msg="Please enter source station, destination station, and journey date.";
+        if(errBox&&errMsg){
+          errMsg.textContent=msg;
+          errBox.classList.remove("hidden");
+        }
+        toast("Missing fields",msg);
+        return;
+      }
+
+      // Client-side validation: Identical source and destination
+      if(from.toLowerCase()===to.toLowerCase()){
+        const msg="Source and destination stations cannot be identical. Please enter different stations.";
+        if(errBox&&errMsg){
+          errMsg.textContent=msg;
+          errBox.classList.remove("hidden");
+        }
+        toast("Invalid route",msg);
+        return;
+      }
+
+      const submitBtn=tf.querySelector('button[type="submit"]');
+      if(submitBtn){submitBtn.disabled=true;submitBtn.textContent="Searching API…";}
+
+      const resultsDiv=$("#trainResults");
+      if(resultsDiv){
+        resultsDiv.innerHTML=`<div class="card" style="margin-top:16px"><div class="empty"><div>⏳</div><b>Querying train schedule inventory…</b><p style="margin-top:5px">Fetching sample route options from /api/v1/train-search</p></div></div>`;
+      }
+
+      try{
+        const data=await api("/train-search",{
+          method:"POST",
+          body:JSON.stringify({from,to,date,class:travelClass})
+        });
+        trainData=data;
+        if(resultsDiv){
+          resultsDiv.innerHTML=renderTrainResults(data);
+        }
+        wireActions();
+        wireTrainResultActions();
+        toast("Trains retrieved from API",`Found ${data.results.length} sample route option${data.results.length===1?"":"s"}.`);
+      }catch(err){
+        if(errBox&&errMsg){
+          errMsg.textContent=err.message||"Unable to complete train search.";
+          errBox.classList.remove("hidden");
+        }
+        if(resultsDiv){
+          resultsDiv.innerHTML=`<div class="card" style="margin-top:16px"><div class="empty"><div>⚠️</div><b>Search request failed</b><p style="margin-top:5px;color:var(--red)">${esc(err.message)}</p></div></div>`;
+        }
+        toast("Train search failed",err.message);
+      }finally{
+        if(submitBtn){submitBtn.disabled=false;submitBtn.textContent="⌕ Search sample trains";}
+      }
+    });
+
+    tf.addEventListener("reset",()=>{
+      trainData=null;
+      const errBox=$("#trainError");
+      if(errBox) errBox.classList.add("hidden");
+      setTimeout(()=>{
+        const r=$("#trainResults");
+        if(r) r.innerHTML='<div class="empty"><div>🚉</div><b>Ready to explore routes</b><p style="margin-top:5px">Enter your journey details and search trains from the backend API.</p></div>';
+      },0);
+    });
+  }
+
+  const pf=$("#paymentForm");
+  if(pf){
+    pf.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const errBox=$("#paymentError");
+      const errMsg=$("#paymentErrorMsg");
+      if(errBox) errBox.classList.add("hidden");
+
+      const issue=($("#payIssue")?$("#payIssue").value:"").trim();
+      const method=($("#payMethod")?$("#payMethod").value:"").trim();
+      const purpose=($("#payPurpose")?$("#payPurpose").value:"").trim()||"TICKET_BOOKING";
+      const date=($("#payDate")?$("#payDate").value:"").trim();
+      const ref=($("#payRef")?$("#payRef").value:"").trim();
+
+      if(!issue||!method){
+        const msg="Please select both payment status/issue and payment method.";
+        if(errBox&&errMsg){errMsg.textContent=msg;errBox.classList.remove("hidden");}
+        toast("Missing required fields",msg);
+        return;
+      }
+
+      // Zero-Trust validation for financial secrets
+      const secretRegex=/(?:\b(?:\d{4}[- ]?){3}\d{4}\b|\b(?:cvv|otp|pin|password)\b)/i;
+      if(ref && secretRegex.test(ref)){
+        const secMsg="Sensitive financial data detected. Never enter card numbers, PINs, CVVs, OTPs, or passwords.";
+        if(errBox&&errMsg){errMsg.textContent=secMsg;errBox.classList.remove("hidden");}
+        toast("Security Alert",secMsg);
+        return;
+      }
+
+      const submitBtn=pf.querySelector('button[type="submit"]');
+      if(submitBtn){submitBtn.disabled=true;submitBtn.textContent="Diagnosing via API…";}
+
+      const diagContainer=$("#diagnosis");
+      if(diagContainer){
+        diagContainer.innerHTML=`<div class="empty"><div>⏳</div><b>Analyzing payment issue…</b><p style="margin-top:5px">Querying rule-based diagnostic engine at /api/v1/payment-help/diagnose</p></div>`;
+      }
+
+      try{
+        const data=await api("/payment-help/diagnose",{
+          method:"POST",
+          body:JSON.stringify({issue,method,purpose,reference:ref,transactionDate:date})
+        });
+        diagnosisData=data;
+        paymentCaseCreatedId=null;
+        if(diagContainer){
+          diagContainer.innerHTML=renderDiagnosis(data);
+        }
+        wireActions();
+        wirePaymentResultActions();
+        toast("Diagnosis ready",data.title);
+      }catch(err){
+        if(errBox&&errMsg){
+          errMsg.textContent=err.message||"Payment diagnosis request failed.";
+          errBox.classList.remove("hidden");
+        }
+        if(diagContainer){
+          diagContainer.innerHTML=`<div class="empty"><div>⚠️</div><b>Diagnosis request failed</b><p style="margin-top:5px;color:var(--red)">${esc(err.message)}</p></div>`;
+        }
+        toast("Payment diagnosis failed",err.message);
+      }finally{
+        if(submitBtn){submitBtn.disabled=false;submitBtn.textContent="🧭 Diagnose Payment";}
+      }
+    });
+
+    pf.addEventListener("reset",()=>{
+      diagnosisData=null;
+      paymentCaseCreatedId=null;
+      const errBox=$("#paymentError");
+      if(errBox) errBox.classList.add("hidden");
+      setTimeout(()=>{
+        const d=$("#diagnosis");
+        if(d) d.innerHTML='<div class="empty"><div>🧭</div><b>Guided next steps</b><p style="margin-top:5px">Select your transaction details on the left to receive actionable guidance from the backend API.</p></div>';
+      },0);
+    });
+  }
+
+  const nf=$("#pnrForm");
+  if(nf){
+    nf.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const errBox=$("#pnrError");
+      const errMsg=$("#pnrErrorMsg");
+      if(errBox) errBox.classList.add("hidden");
+
+      const pnrVal=($("#pnrInput")?$("#pnrInput").value:"").trim();
+      const codeVal=($("#pnrStatusCode")?$("#pnrStatusCode").value:"").trim();
+      const queryVal=($("#pnrQuery")?$("#pnrQuery").value:"").trim();
+
+      if(!/^\d{10}$/.test(pnrVal)){
+        const msg="Please enter a valid 10-digit numeric PNR number (exactly 10 digits).";
+        if(errBox&&errMsg){
+          errMsg.textContent=msg;
+          errBox.classList.remove("hidden");
+        }
+        toast("Invalid PNR format",msg);
+        return;
+      }
+
+      const submitBtn=nf.querySelector('button[type="submit"]');
+      if(submitBtn){submitBtn.disabled=true;submitBtn.textContent="Analyzing with API…";}
+
+      const pnrResDiv=$("#pnrResult");
+      if(pnrResDiv){
+        pnrResDiv.innerHTML=`<div class="card" style="margin-top:16px"><div class="empty"><div>⏳</div><b>Querying reservation rules engine…</b><p style="margin-top:5px">Fetching procedural guidance from /api/v1/pnr-guide/explain</p></div></div>`;
+      }
+
+      try{
+        const data=await api("/pnr-guide/explain",{
+          method:"POST",
+          body:JSON.stringify({pnr:pnrVal,statusCode:codeVal,query:queryVal})
+        });
+        pnrAnalysisData=data;
+        if(pnrResDiv){
+          pnrResDiv.innerHTML=renderPnrResult(data);
+        }
+        toast("PNR guidance generated",data.statusTitle);
+      }catch(err){
+        if(errBox&&errMsg){
+          errMsg.textContent=err.message||"Unable to generate PNR guidance.";
+          errBox.classList.remove("hidden");
+        }
+        if(pnrResDiv){
+          pnrResDiv.innerHTML=`<div class="card" style="margin-top:16px"><div class="empty"><div>⚠️</div><b>Request failed</b><p style="margin-top:5px;color:var(--red)">${esc(err.message)}</p></div></div>`;
+        }
+        toast("PNR guide failed",err.message);
+      }finally{
+        if(submitBtn){submitBtn.disabled=false;submitBtn.textContent="🔍 Explain PNR & Rules";}
+      }
+    });
+
+    nf.addEventListener("reset",()=>{
+      pnrAnalysisData=null;
+      const errBox=$("#pnrError");
+      if(errBox) errBox.classList.add("hidden");
+      setTimeout(()=>{
+        const r=$("#pnrResult");
+        if(r) r.innerHTML='<div class="empty"><div>▣</div><b>Ready to analyze PNR status</b><p style="margin-top:5px">Enter your 10-digit PNR and ticket status to view official reservation rules.</p></div>';
+      },0);
+    });
+  }
+
+  const cf=$("#caseForm");
+  if(cf&&currentRole==="PASSENGER"){
+    cf.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const errBox=$("#caseError");
+      const errMsg=$("#caseErrorMsg");
+      if(errBox) errBox.classList.add("hidden");
+
+      const category=$("#caseCategory").value;
+      const description=$("#caseDesc").value.trim();
+
+      if(!description || description.length < 10){
+        const msg="Please provide a clear description with at least 10 characters explaining your issue.";
+        if(errBox&&errMsg){
+          errMsg.textContent=msg;
+          errBox.classList.remove("hidden");
+        }
+        toast("Description too short",msg);
+        return;
+      }
+
+      const submit=cf.querySelector('button[type="submit"]');
+      if(submit){submit.disabled=true;submit.textContent="Submitting to database…";}
+
+      try{
+        const created=await api("/cases",{method:"POST",body:JSON.stringify({category,description})});
+        caseCreatedId=created.id;
+        await loadCases();
+        render();
+        toast("Case submitted successfully: "+created.id,"Stored in PostgreSQL database.");
+      }catch(error){
+        if(errBox&&errMsg){
+          errMsg.textContent=error.message||"Could not submit complaint.";
+          errBox.classList.remove("hidden");
+        }
+        toast("Could not submit complaint",error.message);
+      }finally{
+        const button=$("#caseForm button[type='submit']");
+        if(button){button.disabled=false;button.textContent="Submit complaint";}
+      }
+    });
+  }
+
+  const refresh=$("#refreshCases");
+  if(refresh){
+    refresh.addEventListener("click",async()=>{
+      try{
+        await loadCases();
+        render();
+        toast("Cases refreshed","Loaded latest complaints from backend.");
+      }catch(error){
+        toast("Refresh failed",error.message);
+      }
+    });
+  }
+
+  const refreshAdmin=$("#refreshAdminCases");
+  if(refreshAdmin){
+    refreshAdmin.addEventListener("click",async()=>{
+      try{
+        await loadCases();
+        await loadAuditLogs();
+        render();
+        toast("Queue updated","Latest cases & metrics refreshed.");
+      }catch(err){
+        toast("Refresh failed",err.message);
+      }
+    });
+  }
+
+  const refreshAudit=$("#refreshAudit");
+  if(refreshAudit){
+    refreshAudit.addEventListener("click",async()=>{
+      try{
+        await loadAuditLogs();
+        render();
+        toast("Audit logs refreshed","Loaded latest audit events from database.");
+      }catch(err){
+        toast("Refresh failed",err.message);
+      }
+    });
+  }
+
+  const caseFilterSelect=$("#caseFilterSelect");
+  if(caseFilterSelect){
+    caseFilterSelect.addEventListener("change",e=>{
+      caseFilter=e.target.value;
+      render();
+    });
+  }
+
+  const caseSearchInput=$("#caseSearchInput");
+  if(caseSearchInput){
+    caseSearchInput.addEventListener("input",e=>{
+      caseSearch=e.target.value;
+      const filteredCases=cases.filter(c=>{
+        if(caseFilter!=="ALL"&&c.rawStatus!==caseFilter) return false;
+        const q=caseSearch.toLowerCase();
+        return c.id.toLowerCase().includes(q)||c.category.toLowerCase().includes(q)||c.detail.toLowerCase().includes(q);
+      });
+      const list=$("#caseList");
+      if(list) list.innerHTML=filteredCases.length?filteredCases.map(caseRow).join(""):'<div class="empty">No matching cases found.</div>';
+      wireActions();
+    });
+  }
+
+  wireActions();
+}
+
+function wireTrainResultActions(){
+  const showAllBtn=$("#showAllClassesBtn");
+  if(showAllBtn){
+    showAllBtn.addEventListener("click",()=>{
+      const sel=$("#class");
+      if(sel) sel.value="";
+      const tf=$("#trainForm");
+      if(tf){
+        if(typeof tf.requestSubmit==="function") tf.requestSubmit();
+        else tf.dispatchEvent(new Event("submit",{cancelable:true}));
+      }
+    });
+  }
+}
+
+function wirePaymentResultActions(){
+  const openModalBtn=$("#openCaseConfirmModal");
+  if(openModalBtn && !openModalBtn.dataset.bound){
+    openModalBtn.dataset.bound="1";
+    openModalBtn.addEventListener("click",()=>{
+      openPaymentCaseModal();
+    });
+  }
+
+  document.querySelectorAll("[data-viewcreatedcase]").forEach(b=>{
+    if(b.dataset.boundCaseView) return;
+    b.dataset.boundCaseView="1";
+    b.addEventListener("click",()=>{
+      showCaseModal(b.dataset.viewcreatedcase);
+    });
+  });
+}
+
+function openPaymentCaseModal(){
+  if(!diagnosisData) return;
+  const isRefund = diagnosisData.issue === "refund";
+  const defaultCategory = isRefund ? "Refund follow-up" : "Payment status unclear";
+  const defaultDesc = `Payment issue: ${diagnosisData.title}. Method: ${diagnosisData.paymentMethod || "UPI"}. Reference: ${diagnosisData.maskedReference || "None"}. Purpose: ${diagnosisData.purpose || "TICKET_BOOKING"}. Recommended action: ${diagnosisData.advice}`;
+
+  $("#modalRoot").innerHTML = `
+  <div class="modal-overlay" id="confirmCaseOverlay">
+    <div class="modal">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+        <div>
+          <div class="eyebrow">CONFIRM COMPLAINT SUBMISSION</div>
+          <h3 style="margin:4px 0">File Support Case from Payment Diagnosis</h3>
+          <small style="color:var(--muted)">Review details before saving to PostgreSQL database.</small>
+        </div>
+        <button class="btn outline small" id="closeConfirmCaseModal">✕</button>
+      </div>
+
+      <form id="paymentCaseConfirmForm">
+        <div class="field">
+          <label for="confirmCaseCat">Problem Category</label>
+          <select id="confirmCaseCat">
+            <option value="Payment status unclear" ${!isRefund?"selected":""}>Payment status unclear</option>
+            <option value="Refund follow-up" ${isRefund?"selected":""}>Refund follow-up</option>
+            <option value="Booking error">Booking error</option>
+            <option value="Other railway enquiry">Other railway enquiry</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="confirmCaseDesc">Case Description</label>
+          <textarea id="confirmCaseDesc" required maxlength="500">${esc(defaultDesc)}</textarea>
+          <span class="hint">Will be assigned an official RS-XXXXXX identifier in PostgreSQL.</span>
+        </div>
+
+        <div class="alert info" style="margin-top:12px">
+          <span>ℹ️</span>
+          <div>Zero-Trust verification: Never enter passwords, PINs, or OTPs. Only masked references are stored.</div>
+        </div>
+
+        <div class="actions" style="margin-top:16px;justify-content:flex-end">
+          <button type="button" class="btn outline" id="cancelCaseConfirm">Cancel</button>
+          <button type="submit" class="btn primary" id="submitPaymentCaseBtn">Confirm & Submit Case</button>
+        </div>
+      </form>
+    </div>
+  </div>`;
+
+  $("#closeConfirmCaseModal").addEventListener("click", () => $("#modalRoot").innerHTML = "");
+  $("#cancelCaseConfirm").addEventListener("click", () => $("#modalRoot").innerHTML = "");
+  $("#confirmCaseOverlay").addEventListener("click", e => {
+    if(e.target.id === "confirmCaseOverlay") $("#modalRoot").innerHTML = "";
+  });
+
+  $("#paymentCaseConfirmForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const cat = $("#confirmCaseCat").value;
+    const desc = $("#confirmCaseDesc").value.trim();
+    if(!desc) return;
+
+    const btn = $("#submitPaymentCaseBtn");
+    btn.disabled = true;
+    btn.textContent = "Submitting to database…";
+
+    try {
+      const created = await api("/cases", {
+        method: "POST",
+        body: JSON.stringify({ category: cat, description: desc })
+      });
+      paymentCaseCreatedId = created.id;
+      await loadCases();
+      $("#modalRoot").innerHTML = "";
+      const diagContainer = $("#diagnosis");
+      if(diagContainer && diagnosisData){
+        diagContainer.innerHTML = renderDiagnosis(diagnosisData);
+        wirePaymentResultActions();
+      }
+      toast("Support case created: " + created.id, "Saved in PostgreSQL database.");
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = "Confirm & Submit Case";
+      toast("Failed to create case", err.message);
+    }
+  });
+}
+
+function wireActions(){
+  document.querySelectorAll("[data-action]").forEach(b=>{
+    if(b.dataset.bound)return;
+    b.dataset.bound="1";
+    b.addEventListener("click",()=>{
+      const a=b.dataset.action;
+      if(a==="admin"&&currentRole!=="ADMIN"){
+        toast("Admin access required","Sign in with the local admin demo account.");
+        return;
+      }
+      if(pages[a]) go(a);
+      else if(a==="createPaymentCase"){
+        go("cases");
+        const cat=$("#caseCategory");
+        if(cat) cat.value="Payment status unclear";
+        const desc=$("#caseDesc");
+        if(desc) desc.value=diagnosisData?`Assistance request: ${diagnosisData.title}. Advice provided: ${diagnosisData.advice}`:"Payment follow-up requested.";
+        toast("Ready to create a case","Review pre-filled details and click Submit.");
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-bookdemo]").forEach(b=>{
+    if(b.dataset.bound)return;
+    b.dataset.bound="1";
+    b.addEventListener("click",()=>{
+      const code=b.dataset.bookdemo;
+      const trainName=b.dataset.trainname||code;
+      toast(`Simulated: ${trainName}`, "Sample prototype data only. Live booking & PNR charting requires official IRCTC portal (irctc.co.in).");
+    });
+  });
+
+  document.querySelectorAll("[data-casedetail]").forEach(b=>{
+    if(b.dataset.boundDetail)return;
+    b.dataset.boundDetail="1";
+    b.addEventListener("click",e=>{
+      e.stopPropagation();
+      showCaseModal(b.dataset.casedetail);
+    });
+  });
+
+  document.querySelectorAll("[data-resolve]").forEach(b=>{
+    if(b.dataset.boundResolve)return;
+    b.dataset.boundResolve="1";
+    b.addEventListener("click",async e=>{
+      e.stopPropagation();
+      if(currentRole!=="ADMIN"){
+        toast("Admin access required","Only admin accounts can change case status.");
+        return;
+      }
+      const caseId=b.dataset.resolve;
+      b.disabled=true;
+      b.textContent="Resolving…";
+      try{
+        const updated=await api("/admin/cases/"+encodeURIComponent(caseId)+"/status",{
+          method:"PATCH",
+          body:JSON.stringify({status:"RESOLVED",note:"Resolved by admin operations console"})
+        });
+        await loadCases();
+        await loadAuditLogs();
+        render();
+        toast("Case "+updated.id+" resolved","Status updated in database and audit logged.");
+      }catch(error){
+        b.disabled=false;
+        b.textContent="Mark resolved";
+        toast("Status update failed",error.message);
+      }
+    });
+  });
+
+  const viewCaseBtn=$("#viewCreatedCaseBtn");
+  if(viewCaseBtn && !viewCaseBtn.dataset.bound){
+    viewCaseBtn.dataset.bound="1";
+    viewCaseBtn.addEventListener("click",()=>{
+      const cid=viewCaseBtn.dataset.viewcase||caseCreatedId;
+      if(cid) showCaseModal(cid);
+    });
+  }
+
+  document.querySelectorAll("[data-adminstatus]").forEach(b=>{
+    if(b.dataset.boundAdminStatus) return;
+    b.dataset.boundAdminStatus="1";
+    b.addEventListener("click",e=>{
+      e.stopPropagation();
+      openAdminStatusModal(b.dataset.adminstatus);
+    });
+  });
+}
+
+syncRoleUI();
+render();
+</script>
+</body>
+</html>
