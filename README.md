@@ -384,7 +384,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## 25. Contact & Project Feedback
 
 - **Maintainer:** Rajiv Sharma
-- **Email:** `rajivsharma.aiengineer@gmail.com`
+- **Email:** `rajivkumarsharma200@gmail.com`
 - **GitHub:** [@rajivsharma8757](https://github.com/rajivsharma8757)
 - **Repository:** [https://github.com/rajivsharma8757/RailSahayak](https://github.com/rajivsharma8757/RailSahayak)
 - **Feedback & Discussions:** Please open a discussion or issue on GitHub for technical feedback, architecture reviews, or collaboration proposals.

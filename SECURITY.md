@@ -13,7 +13,7 @@
 We take the security and privacy of citizen interactions seriously. If you discover a security vulnerability or potential privacy issue in RailSahayak, please report it responsibly:
 
 - **Do NOT** open a public GitHub issue for security vulnerabilities.
-- Please email the maintainer directly at: `rajivsharma.aiengineer@gmail.com`
+- Please email the maintainer directly at: `rajivkumarsharma200@gmail.com`
 - Include detailed steps to reproduce the issue, along with any relevant proof-of-concept code or network payloads.
 
 You will receive an acknowledgment within 48 hours, followed by regular updates on triage and mitigation progress.
