@@ -220,19 +220,20 @@ def build_pdf(toc_map=None):
 
     hero_img = os.path.join(ASSETS_DIR, "railway_cover_train.jpg")
     if os.path.exists(hero_img):
-        story.append(Image(hero_img, width=510, height=210))
+        story.append(Image(hero_img, width=510, height=195))
         story.append(Paragraph("Figure: Modern Indian Passenger Rail Operations | Continuous Public-Service Modernization", style_caption))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
 
     meta_rows = [
         ["Project Name", "RailSahayak (Strictly independent prototype; zero legacy branding)"],
+        ["Public Repository", "https://github.com/rajivsharma8757/RailSahayak (MIT License)"],
         ["Target Reviewers", "Ministry of Railways (MoR), IRCTC, CRIS, Railway Innovation & Incubation Programs"],
         ["Evaluation Version", "2.1 (Comprehensive Post-Audit Edition)"],
         ["Submission Date", "October 2026"],
         ["Engineering Team", "RailSahayak Independent Engineering Initiative"]
     ]
     story.append(make_table(["Document Attribute", "Proposal Specification"], meta_rows, [140, 370]))
-    story.append(Spacer(1, 5))
+    story.append(Spacer(1, 4))
 
     story.append(make_callout(
         "<b>INSTITUTIONAL NOTICE & PROTOTYPE BOUNDARY DISCLAIMER:</b> RailSahayak is an independent, non-official software engineering initiative developed solely for exploratory evaluation and technical research. It has not been commissioned, approved, or endorsed by the Ministry of Railways, IRCTC, or CRIS. It maintains no live access to the Indian Railways Passenger Reservation System (PRS), National Train Enquiry System (NTES), or official payment gateways. No actual tickets are booked, and no live financial transactions are processed.",
@@ -524,7 +525,7 @@ def build_pdf(toc_map=None):
         style_body
     ))
     story.append(Paragraph(
-        "RailSahayak strictly adheres to the principle of transparent scope: it does not claim artificial intelligence where deterministic rule engines are employed, it does not simulate live PRS connections where static sample fixtures exist, and it never obscures technical limitations behind marketing generalities.",
+        "RailSahayak strictly adheres to the principle of transparent scope: it does not claim artificial intelligence where deterministic rule engines are employed, it does not simulate live PRS connections where static sample fixtures exist, and it never obscures technical limitations behind marketing generalities. The complete codebase, database migrations, 29-test verification suite, and container blueprints are published for open technical review at <link href=\"https://github.com/rajivsharma8757/RailSahayak\" color=\"#005A9C\"><u>https://github.com/rajivsharma8757/RailSahayak</u></link> (MIT License).",
         style_body
     ))
     story.append(Spacer(1, 3))
@@ -740,15 +741,16 @@ def build_pdf(toc_map=None):
         ["Persistence Engine", "PostgreSQL 16 Relational Database", "ACID-compliant relational database with foreign key integrity and B-tree performance indexing."],
         ["Schema Migration", "Flyway Migration Framework (v10.20.1)", "Version-controlled database migrations (V1 create tables, V2 performance indexing)."],
         ["Edge Security Filter", "RateLimitingFilter (Sliding Window)", "In-memory rate limiter enforcing 300 req/min per IP with trusted-proxy IP verification."],
-        ["Observability Layer", "CorrelationIdFilter + SLF4J MDC", "Cryptographic request correlation ID propagation across all logs and response headers."]
+        ["Observability Layer", "CorrelationIdFilter + SLF4J MDC", "Cryptographic request correlation ID propagation across all logs and response headers."],
+        ["Container & Cloud", "Docker (Temurin 21) & Render (render.yaml)", "Multi-stage Dockerfile and Render blueprint for backend service + managed PostgreSQL."]
     ]
     story.append(make_table(["Architectural Tier", "Technology & Version", "Operational Role & Governance Guarantee"], stack_rows, [105, 155, 250]))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
 
     story.append(Paragraph("10.2 System Architecture & Boundary Diagram", style_h2))
     arch_diag = os.path.join(PROPOSAL_ASSETS_DIR, "diagram_system_architecture.png")
     if os.path.exists(arch_diag):
-        story.append(Image(arch_diag, width=500, height=265))
+        story.append(Image(arch_diag, width=500, height=245))
         story.append(Paragraph("Figure 6: Multi-Tier Spring Boot Architecture & Authoritative External Railway Boundaries", style_caption))
     story.append(PageBreak())
 
@@ -1287,7 +1289,7 @@ def build_pdf(toc_map=None):
     story.append(Spacer(1, 2))
 
     request_boxes = [
-        ("1. Technical Architecture & Security Review", "An opportunity to walk through the Spring Boot codebase, RateLimitingFilter trusted-proxy implementation, and PostgreSQL schema with CRIS or IRCTC technical specialists to identify architectural enhancements."),
+        ("1. Technical Architecture & Security Review", "An opportunity to walk through the publicly reviewable Spring Boot codebase (github.com/rajivsharma8757/RailSahayak), RateLimitingFilter trusted-proxy implementation, and PostgreSQL schema with CRIS or IRCTC technical specialists to identify architectural enhancements."),
         ("2. Procedural Guidance & Regulatory Validation", "Expert guidance from railway commercial officers to verify that the plain-language explanations of charting deadlines, waitlist priorities, and Section 138 statutory warnings accurately reflect current operating circulars."),
         ("3. Cybersecurity & Data Protection Advisory", "Feedback on the security posture, secret-rejection regex patterns, and compliance alignment with Ministry of Electronics and Information Technology (MeitY) and DPDP Act standards."),
         ("4. Staging Data Access / Sandbox Exploration", "Guidance regarding the formal administrative and technical prerequisites required to access non-production, simulated CRIS/NTES data feeds for controlled testing."),
@@ -1331,6 +1333,7 @@ def build_pdf(toc_map=None):
 
     story.append(Paragraph("24.2 Internal Codebase Artifacts and Verification Records", style_h2))
     app_repo_rows = [
+        ["[A0]", "Public Repository", "https://github.com/rajivsharma8757/RailSahayak", "GitHub", "Public repo (MIT), 29 tests, Dockerfile, Render blueprint"],
         ["[A1]", "JUnit 5 / Spring Test", "src/test/java/in/railsahayak/RailSahayakApplicationTests.java", "29 Tests", "Verified pass: Tests run: 29, Failures: 0, Errors: 0, Time: 9.533s"],
         ["[A2]", "Spring Security", "src/main/java/in/railsahayak/SecurityConfig.java", "Codebase", "RBAC URL protection, externalized demo credentials, security headers"],
         ["[A3]", "Ingress Defense", "src/main/java/in/railsahayak/RateLimitingFilter.java", "Codebase", "Sliding window rate limiter, trusted proxy IP verification"],

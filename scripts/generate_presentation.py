@@ -251,7 +251,7 @@ def build_pptx():
 
     tb_f1 = s1.shapes.add_textbox(Inches(0.80), Inches(7.10), Inches(11.733), Inches(0.30))
     p_f1 = tb_f1.text_frame.paragraphs[0]
-    p_f1.text = "Independent technical exploration prototype  |  October 2026  |  No official endorsement claimed"
+    p_f1.text = "Independent technical exploration prototype  |  October 2026  |  Repository: github.com/rajivsharma8757/RailSahayak"
     p_f1.font.name = "Arial"
     p_f1.font.size = Pt(8)
     p_f1.font.color.rgb = COLOR_MUTED_TEXT
@@ -1066,7 +1066,7 @@ def build_pptx():
     pb3_0.font.bold = True
     pb3_0.font.color.rgb = RGBColor(185, 217, 235)
     pb3_1 = tf_b3.add_paragraph()
-    pb3_1.text = "1. Review the current prototype and its evidence.\n2. Identify required corrections and institutional prerequisites.\n3. Decide whether any further evaluation is appropriate."
+    pb3_1.text = "1. Review the current prototype and its evidence (Repository: github.com/rajivsharma8757/RailSahayak).\n2. Identify required corrections and institutional prerequisites.\n3. Decide whether any further evaluation is appropriate."
     pb3_1.font.name = "Arial"
     pb3_1.font.size = Pt(9.5)
     pb3_1.font.color.rgb = COLOR_WHITE
@@ -1143,7 +1143,7 @@ def build_pptx():
     p_ci0.font.bold = True
     p_ci0.font.color.rgb = COLOR_NAVY
     p_ci1 = tf_ci.add_paragraph()
-    p_ci1.text = "Presented for technical evaluation and institutional guidance.\nProject materials and technical evidence can be prepared for review.\nOctober 2026"
+    p_ci1.text = "Presented for technical evaluation and institutional guidance.\nPublic Repository: https://github.com/rajivsharma8757/RailSahayak\nOctober 2026"
     p_ci1.font.name = "Arial"
     p_ci1.font.size = Pt(8.5)
     p_ci1.font.color.rgb = COLOR_DARK_TEXT
@@ -1281,7 +1281,7 @@ def build_pdf():
 
     c.setFont("Helvetica", 8)
     c.setFillColor(rl_color(HEX_MUTED_TEXT))
-    c.drawString(58, 16, "Independent technical exploration prototype  |  October 2026  |  No official endorsement claimed")
+    c.drawString(58, 16, "Independent technical exploration prototype  |  October 2026  |  Repository: github.com/rajivsharma8757/RailSahayak")
     c.showPage()
 
     # -------------------------------------------------------------------------
@@ -1657,7 +1657,7 @@ def build_pdf():
     draw_para(f"<b>THE REQUEST & COLLABORATION PATHWAY</b><br/><br/>We respectfully invite relevant technical stakeholders to review the concept and provide guidance on procedural accuracy, security expectations, authorized testing requirements, and possible future development.<br/><br/><font color='{HEX_BLUE}'><b>If an existing railway system should not be replaced or changed, RailSahayak could still be considered for complementary evaluation, subject to technical, legal, and institutional review. Technical mentorship, skill-development guidance, further development, or a possible handover arrangement may also be discussed if appropriate.</b></font>", 94, 540 - 240 - 120, 772, 110, font_size=9)
 
     draw_card_box(80, 540 - 380 - 100, 800, 100, bg_hex=HEX_NAVY, border_hex=None, radius=6)
-    draw_para("<font color='#B9D9EB'><b>THREE CONCRETE NEXT STEPS</b></font><br/><br/>1. Review the current prototype and its evidence.<br/>2. Identify required corrections and institutional prerequisites.<br/>3. Decide whether any further evaluation is appropriate.", 94, 540 - 380 - 90, 772, 80, font_size=9.5, color_hex=HEX_WHITE)
+    draw_para("<font color='#B9D9EB'><b>THREE CONCRETE NEXT STEPS</b></font><br/><br/>1. Review the current prototype and its evidence (Repository: github.com/rajivsharma8757/RailSahayak).<br/>2. Identify required corrections and institutional prerequisites.<br/>3. Decide whether any further evaluation is appropriate.", 94, 540 - 380 - 90, 772, 80, font_size=9.5, color_hex=HEX_WHITE)
     c.showPage()
 
     # -------------------------------------------------------------------------
@@ -1689,9 +1689,9 @@ def build_pdf():
 
     draw_para("<b>Request for Technical Review and Guidance</b><br/><br/>An independent prototype presented for constructive feedback and possible future evaluation.", 58, 540 - 355, 400, 75, font_size=11)
 
-    # Accurate, verified wording without fabricated repository URLs or contacts
+    # Accurate, verified wording with repository URL
     draw_card_box(58, 540 - 485, 400, 105, bg_hex=HEX_CONTAINER, border_hex=HEX_BORDER, radius=6)
-    draw_para("<b>STAKEHOLDER EXPLORATION SESSION</b><br/><br/>Presented for technical evaluation and institutional guidance.<br/>Project materials and technical evidence can be prepared for review.<br/>October 2026", 70, 540 - 475, 376, 85, font_size=8.5, color_hex=HEX_NAVY)
+    draw_para("<b>STAKEHOLDER EXPLORATION SESSION</b><br/><br/>Presented for technical evaluation and institutional guidance.<br/>Public Repository: <font color='#1D6394'><b>github.com/rajivsharma8757/RailSahayak</b></font><br/>October 2026", 70, 540 - 475, 376, 85, font_size=8.5, color_hex=HEX_NAVY)
 
     draw_card_box(482, 540 - 58 - 425, 420, 425, bg_hex=HEX_LIGHT_BG, border_hex=HEX_BORDER, radius=8)
     if os.path.exists(IMG_COVER_TRAIN):
