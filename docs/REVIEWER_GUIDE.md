@@ -1,8 +1,10 @@
 # RailSahayak — Technical Reviewer Guide & Evaluation Handbook
 
 > **Project Identity:** RailSahayak (Independent Passenger Assistance & Service Support Prototype)  
-> **Repository:** [https://github.com/rajivsharma8757/RailSahayak](https://github.com/rajivsharma8757/RailSahayak)  
-> **Contact / Maintainer:** Rajiv Sharma (`rajivkumarsharma200@gmail.com`)  
+> **Live Cloud Deployment:** [https://railsahayak-backend.onrender.com](https://railsahayak-backend.onrender.com)  
+> **Public Repository:** [https://github.com/rajivsharma8757/RailSahayak](https://github.com/rajivsharma8757/RailSahayak)  
+> **Developer & Maintainer:** Rajiv Sharma (`rajivkumarsharma200@gmail.com`)  
+> **Developer Profile:** Third-year B.Tech Computer Science and Engineering student at Maharishi Markandeshwar (Deemed to be University), Mullana, Ambala, Haryana  
 > **Evidentiary Standard:** Evaluator Guidance Document (October 2026)
 
 ---
@@ -26,7 +28,7 @@ The application implements strict Role-Based Access Control (RBAC) via Spring Se
 | **Target Role** | Railway passenger seeking advisory support | Railway customer service / station operations staff |
 | **Access URL** | `/` (Overview, Train Finder, PNR, Payment, Cases) | `/#admin` (Admin Case Console & Audit Logs) |
 | **Demo Username** | `passenger` | `admin` |
-| **Demo Password** | Configured during setup (or local demo default) | Provided privately to authorized evaluators |
+| **Demo Password** | `PassengerDemo123!` (Instant public evaluation) | Provided privately upon request to authorized evaluators |
 | **Assigned Authority** | `ROLE_PASSENGER` | `ROLE_ADMIN` |
 | **Data Scope** | User's own submitted support cases only | System-wide case queue, status mutator, and audit trail |
 | **Admin Route Access** | **Blocked (HTTP 403 Forbidden)** | **Granted (HTTP 200 OK)** |
@@ -38,9 +40,22 @@ The application implements strict Role-Based Access Control (RBAC) via Spring Se
 
 ## 3. Evaluation Setup & Access Methods
 
-### Option A: Local Standalone Evaluation (Recommended / Instant)
+### Option A: Live Public Cloud Deployment (Instant / Zero Installation — Recommended)
 
-The application includes an embedded in-memory database fallback (PostgreSQL compatibility mode) allowing complete evaluation in under 30 seconds with zero external database setup:
+The application is deployed live on Render's container cloud platform connected to a managed PostgreSQL 16 database:
+* **Live Web URL:** [https://railsahayak-backend.onrender.com](https://railsahayak-backend.onrender.com)
+* **Passenger Evaluation (Public):**
+  * **Username:** `passenger`
+  * **Password:** `PassengerDemo123!`
+  * Public reviewers can instantly explore the Smart Train Finder, PNR Explainer, Payment Help Diagnoser, and Case Submission workflow without installing any local software.
+* **Administrator Evaluation (Private Access Protocol):**
+  * To preserve the integrity of the live triage queue and audit trail, administrative credentials are not published publicly.
+  * Reviewers, faculty, or railway technical evaluators wishing to test administrative features (staff case triage queue, case status transitions, and append-only audit trail) can request credentials directly by emailing **Rajiv Sharma** at [`rajivkumarsharma200@gmail.com`](mailto:rajivkumarsharma200@gmail.com) with the subject line `[RailSahayak] Admin Credential Request`.
+* **Note on Cloud Service Cold Starts:** The free-tier cloud container sleeps after 15 minutes of inactivity. When dormant, the initial page load may take 25–35 seconds to wake up the service. Subsequent API queries respond in under 50–100 milliseconds.
+
+### Option B: Local Standalone Evaluation (Rapid Local Run)
+
+The application includes an embedded in-memory database fallback (PostgreSQL compatibility mode) allowing complete local evaluation in under 30 seconds with zero external database setup:
 
 1. **Prerequisites:** Java 21 LTS (or higher) and Apache Maven 3.9+.
 2. **Clone the Repository:**
@@ -59,7 +74,7 @@ The application includes an embedded in-memory database fallback (PostgreSQL com
    ```
 4. **Access the Web Interface:** Open `http://localhost:8081` in any modern web browser.
 
-### Option B: Local Docker Compose Evaluation
+### Option C: Local Docker Compose Evaluation
 
 For testing with full container orchestration and native PostgreSQL 16:
 ```bash
@@ -67,11 +82,11 @@ docker compose up --build
 ```
 The backend starts on `http://localhost:8081` connected to the PostgreSQL container on port `5432`.
 
-### Option C: 1-Click Cloud Deployment via Render Blueprint
+### Option D: 1-Click Cloud Deployment via Render Blueprint
 
 The repository contains a declarative [`render.yaml`](../render.yaml) blueprint:
 * **Deploy Link:** [https://render.com/deploy?repo=https://github.com/rajivsharma8757/RailSahayak](https://render.com/deploy?repo=https://github.com/rajivsharma8757/RailSahayak)
-* **Status:** The blueprint is ready for instant cloud deployment. When an authorized reviewer connects a Render account, Render automatically provisions the managed PostgreSQL database and Eclipse Temurin Java 21 runtime container.
+* **Status:** When an authorized reviewer connects a Render account, Render automatically provisions the managed PostgreSQL database and Eclipse Temurin Java 21 runtime container.
 
 ---
 
@@ -231,6 +246,8 @@ Server stopped cleanly.
 ## 8. Evidentiary Inquiries & Technical Review Feedback
 
 For questions regarding this architecture, security specifications, or scheduling an exploratory technical review:
-* **Lead Engineer:** Rajiv Sharma
+* **Developer & Maintainer:** Rajiv Sharma (Third-year B.Tech CSE student, Maharishi Markandeshwar [Deemed to be University], Mullana, Ambala, Haryana)
 * **Contact Email:** [rajivkumarsharma200@gmail.com](mailto:rajivkumarsharma200@gmail.com)
+* **Live Public Demo:** [https://railsahayak-backend.onrender.com](https://railsahayak-backend.onrender.com)
 * **GitHub Repository:** [https://github.com/rajivsharma8757/RailSahayak](https://github.com/rajivsharma8757/RailSahayak)
+

@@ -4,17 +4,23 @@
 > *Prepared for Exploratory Technical Review by Indian Railways, IRCTC, and CRIS Stakeholders*
 
 [![RailSahayak CI](https://github.com/rajivsharma8757/RailSahayak/actions/workflows/ci.yml/badge.svg)](https://github.com/rajivsharma8757/RailSahayak/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render%20Cloud-blue.svg)](https://railsahayak-backend.onrender.com)
 [![Java 21 LTS](https://img.shields.io/badge/Java-21%20LTS-blue.svg)](https://adoptium.net/)
 [![Spring Boot 3.4.5](https://img.shields.io/badge/Spring%20Boot-3.4.5-brightgreen.svg)](https://spring.io/projects/spring-boot)
 [![PostgreSQL 16](https://img.shields.io/badge/PostgreSQL-16-blue.svg)](https://www.postgresql.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests: 29 Passed](https://img.shields.io/badge/Tests-29%20Passed-success.svg)](docs/TESTING.md)
 
+> 🚀 **Live Cloud Deployment:** [https://railsahayak-backend.onrender.com](https://railsahayak-backend.onrender.com)  
+> 👤 **Instant Public Passenger Evaluation:** Username `passenger` / Password `PassengerDemo123!`  
+> 🔒 **Administrative Evaluation:** Credentials provided privately upon request to `rajivkumarsharma200@gmail.com`  
+> 👨‍💻 **Developer & Maintainer:** Rajiv Sharma, third-year B.Tech Computer Science and Engineering student at Maharishi Markandeshwar (Deemed to be University), Mullana, Ambala, Haryana
+
 ---
 
 ## 1. Project Title & Concise Introduction
 
-**RailSahayak** is an independent, evidence-backed software prototype designed to provide structured pre-triage assistance and plain-language procedural guidance for Indian Railways passengers. Built with Spring Boot 3.4.5, Java 21 LTS, and PostgreSQL 16, RailSahayak translates complex ticketing rules, decodes reservation statuses, explains bank settlement timelines for failed digital payments, and provides an isolated local case workflow engine for passenger inquiries.
+**RailSahayak** is an independent, evidence-backed software prototype designed to provide structured pre-triage assistance and plain-language procedural guidance for Indian Railways passengers. Engineered by Rajiv Sharma, a third-year B.Tech Computer Science and Engineering student at Maharishi Markandeshwar (Deemed to be University), Mullana, Ambala, Haryana, and built with Spring Boot 3.4.5, Java 21 LTS, and PostgreSQL 16, RailSahayak translates complex ticketing rules, decodes reservation statuses, explains bank settlement timelines for failed digital payments, and provides an isolated local case workflow engine for passenger inquiries.
 
 > **INSTITUTIONAL DISCLAIMER:** RailSahayak is an independently developed research and engineering prototype. It is **not** an officially endorsed application of the Ministry of Railways, IRCTC, CRIS, or RailMadad. It does not perform live ticket bookings, does not query live production PRS databases, and does not initiate banking transfers. All interactions with official railway services are provided via authoritative outbound reference links to [IRCTC](https://www.irctc.co.in/), [CRIS PRS](https://indianrail.gov.in/), and [RailMadad](https://railmadad.indianrailways.gov.in/).
 
@@ -341,9 +347,17 @@ Schema migrations are strictly version-controlled with Flyway:
 
 ---
 
-## 20. Deployment Instructions
+## 20. Deployment & Live Reviewer Access
 
-Comprehensive deployment guidelines for Render, Railway, AWS, and GCP are provided in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). The application binds to `${PORT}` and uses `${DB_URL}` for managed PostgreSQL connections with SSL.
+### 20.1 Live Cloud Deployment (Instant Evaluation)
+RailSahayak is deployed live on Render connected to a managed PostgreSQL 16 database:
+* **Web Application:** [https://railsahayak-backend.onrender.com](https://railsahayak-backend.onrender.com)
+* **Passenger Testing (Public):** Log in with username `passenger` and password `PassengerDemo123!` to test the Train Finder, PNR Explainer, Payment Guidance, and Case Submission modules.
+* **Administrator Testing (Private Protocol):** Administrative credentials (`ROLE_ADMIN`) for case triage queue management and audit trail inspection are provided upon request. Please email `rajivkumarsharma200@gmail.com` with the subject line `[RailSahayak] Admin Credential Request`.
+* **Cold Start Advisory:** The free-tier cloud container sleeps after 15 minutes of inactivity. Initial waking requires approximately 25–35 seconds; subsequent requests respond in under 100ms.
+
+### 20.2 Local & Self-Hosted Deployment
+Comprehensive deployment guidelines for local JAR execution, Docker Compose, Render Blueprint, Railway, AWS, and GCP are provided in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) and [`docs/REVIEWER_GUIDE.md`](docs/REVIEWER_GUIDE.md).
 
 ---
 
@@ -383,8 +397,11 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 25. Contact & Project Feedback
 
-- **Maintainer:** Rajiv Sharma
-- **Email:** `rajivkumarsharma200@gmail.com`
-- **GitHub:** [@rajivsharma8757](https://github.com/rajivsharma8757)
+- **Developer & Maintainer:** Rajiv Sharma
+- **Academic Background:** Third-year B.Tech Computer Science and Engineering student at Maharishi Markandeshwar (Deemed to be University), Mullana, Ambala, Haryana
+- **Contact Email:** `rajivkumarsharma200@gmail.com`
+- **Live Cloud Deployment:** [https://railsahayak-backend.onrender.com](https://railsahayak-backend.onrender.com)
+- **GitHub Profile:** [@rajivsharma8757](https://github.com/rajivsharma8757)
 - **Repository:** [https://github.com/rajivsharma8757/RailSahayak](https://github.com/rajivsharma8757/RailSahayak)
 - **Feedback & Discussions:** Please open a discussion or issue on GitHub for technical feedback, architecture reviews, or collaboration proposals.
+

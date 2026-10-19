@@ -220,17 +220,18 @@ def build_pdf(toc_map=None):
 
     hero_img = os.path.join(ASSETS_DIR, "railway_cover_train.jpg")
     if os.path.exists(hero_img):
-        story.append(Image(hero_img, width=510, height=195))
+        story.append(Image(hero_img, width=510, height=180))
         story.append(Paragraph("Figure: Modern Indian Passenger Rail Operations | Continuous Public-Service Modernization", style_caption))
     story.append(Spacer(1, 3))
 
     meta_rows = [
         ["Project Name", "RailSahayak (Strictly independent prototype; zero legacy branding)"],
         ["Public Repository", "https://github.com/rajivsharma8757/RailSahayak (MIT License)"],
-        ["Target Reviewers", "Ministry of Railways (MoR), IRCTC, CRIS, Railway Innovation & Incubation Programs"],
-        ["Evaluation Version", "2.1 (Comprehensive Post-Audit Edition)"],
-        ["Submission Date", "October 2026"],
-        ["Engineering Team", "RailSahayak Independent Engineering Initiative"]
+        ["Live Cloud Demo", "https://railsahayak-backend.onrender.com (Public Evaluation)"],
+        ["Target Reviewers", "Ministry of Railways, IRCTC, CRIS, RDSO, Startup India & Incubation Programs"],
+        ["Developer / Author", "Rajiv Sharma (3rd-Yr B.Tech CSE, MMDU Mullana | rajivkumarsharma200@gmail.com)"],
+        ["Evaluation Version", "2.2 (Comprehensive Stakeholder Outreach Edition)"],
+        ["Submission Date", "October 2026"]
     ]
     story.append(make_table(["Document Attribute", "Proposal Specification"], meta_rows, [140, 370]))
     story.append(Spacer(1, 4))
@@ -251,8 +252,8 @@ def build_pdf(toc_map=None):
     doc_ctrl_rows = [
         ["1.0", "Oct 12, 2026", "Initial Architecture", "Baseline Spring Boot backend, H2 database, core REST endpoints."],
         ["1.5", "Oct 14, 2026", "Security Hardening", "PostgreSQL migration, RateLimitingFilter, RBAC role separation."],
-        ["2.0", "Oct 17, 2026", "Proposal Draft", "Initial stakeholder proposal pack, presentation deck, 29 test suite."],
-        ["2.1", "Oct 18, 2026", "Comprehensive Audit", "Evidence tiering, statutory citation alignment, zero-trust audit, UI specs."]
+        ["2.0", "Oct 17, 2026", "Proposal Draft", "31-page evidence-based stakeholder proposal, 29-test verification suite."],
+        ["2.2", "Oct 19, 2026", "Outreach Edition", "Live Render deployment, recipient research directory, developer profile."]
     ]
     story.append(make_table(["Version", "Date", "Phase", "Scope of Engineering Changes"], doc_ctrl_rows, [45, 75, 110, 280]))
     story.append(Spacer(1, 4))
@@ -525,7 +526,7 @@ def build_pdf(toc_map=None):
         style_body
     ))
     story.append(Paragraph(
-        "RailSahayak strictly adheres to the principle of transparent scope: it does not claim artificial intelligence where deterministic rule engines are employed, it does not simulate live PRS connections where static sample fixtures exist, and it never obscures technical limitations behind marketing generalities. The complete codebase, database migrations, 29-test verification suite, and container blueprints are published for open technical review at <link href=\"https://github.com/rajivsharma8757/RailSahayak\" color=\"#005A9C\"><u>https://github.com/rajivsharma8757/RailSahayak</u></link> (MIT License).",
+        "RailSahayak strictly adheres to the principle of transparent scope: it does not claim artificial intelligence where deterministic rule engines are employed, it does not simulate live PRS connections where static sample fixtures exist, and it never obscures technical limitations behind marketing generalities. The complete codebase, database migrations, 29-test verification suite, and container blueprints are published for open technical review at <link href=\"https://github.com/rajivsharma8757/RailSahayak\" color=\"#005A9C\"><u>https://github.com/rajivsharma8757/RailSahayak</u></link> (MIT License), with a live cloud deployment accessible at <link href=\"https://railsahayak-backend.onrender.com\" color=\"#005A9C\"><u>https://railsahayak-backend.onrender.com</u></link>.",
         style_body
     ))
     story.append(Spacer(1, 3))
@@ -1293,7 +1294,7 @@ def build_pdf(toc_map=None):
         ("2. Procedural Guidance & Regulatory Validation", "Expert guidance from railway commercial officers to verify that the plain-language explanations of charting deadlines, waitlist priorities, and Section 138 statutory warnings accurately reflect current operating circulars."),
         ("3. Cybersecurity & Data Protection Advisory", "Feedback on the security posture, secret-rejection regex patterns, and compliance alignment with Ministry of Electronics and Information Technology (MeitY) and DPDP Act standards."),
         ("4. Staging Data Access / Sandbox Exploration", "Guidance regarding the formal administrative and technical prerequisites required to access non-production, simulated CRIS/NTES data feeds for controlled testing."),
-        ("5. Structured Exploratory Discussion", "A preliminary review meeting to assess whether the RailSahayak pre-triage concept could serve as a valuable complementary asset for Indian Railways passengers.")
+        ("5. Structured Exploratory Discussion & Incubation Guidance", "A preliminary review meeting to assess the prototype architecture, evaluate incubation or student grant opportunities under 'Startups for Railways', Startup India Seed Fund, or Atal Innovation Mission, and determine whether the RailSahayak pre-triage concept could serve as a valuable complementary asset for Indian Railways passengers.")
     ]
     for r_title, r_desc in request_boxes:
         story.append(make_callout(r_desc, title=r_title, hex_bg=HEX_LIGHT_BLUE, hex_border=HEX_STEEL, border_left=2))
@@ -1333,7 +1334,7 @@ def build_pdf(toc_map=None):
 
     story.append(Paragraph("24.2 Internal Codebase Artifacts and Verification Records", style_h2))
     app_repo_rows = [
-        ["[A0]", "Public Repository", "https://github.com/rajivsharma8757/RailSahayak", "GitHub", "Public repo (MIT), 29 tests, Dockerfile, Render blueprint"],
+        ["[A0]", "Public Repository & Live Demo", "https://github.com/rajivsharma8757/RailSahayak | Demo: https://railsahayak-backend.onrender.com", "GitHub / Render", "Public repo (MIT), 29 tests, live cloud container + Postgres 16"],
         ["[A1]", "JUnit 5 / Spring Test", "src/test/java/in/railsahayak/RailSahayakApplicationTests.java", "29 Tests", "Verified pass: Tests run: 29, Failures: 0, Errors: 0, Time: 9.533s"],
         ["[A2]", "Spring Security", "src/main/java/in/railsahayak/SecurityConfig.java", "Codebase", "RBAC URL protection, externalized demo credentials, security headers"],
         ["[A3]", "Ingress Defense", "src/main/java/in/railsahayak/RateLimitingFilter.java", "Codebase", "Sliding window rate limiter, trusted proxy IP verification"],
