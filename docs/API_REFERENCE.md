@@ -12,7 +12,7 @@ Default development base URL: `http://localhost:8081/api/v1`
 | **Authentication Scheme** | HTTP Basic Authentication (`Authorization: Basic <base64-credentials>`) |
 | **Public Endpoints** | `/api/v1/health`, `/`, `/index.html`, `/static/**` |
 | **Passenger Endpoints** | Require `ROLE_PASSENGER` or `ROLE_ADMIN` (e.g. `passenger:PassengerDemo123!`) |
-| **Admin Endpoints** | Require `ROLE_ADMIN` (e.g. `admin:AdminDemo123!`) |
+| **Admin Endpoints** | Require `ROLE_ADMIN` (credentials provided privately to authorized evaluators) |
 | **Correlation Tracking** | Clients may send `X-Correlation-ID`. The service propagates this identifier across all logs and response headers. |
 
 ---

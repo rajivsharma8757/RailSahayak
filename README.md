@@ -259,8 +259,8 @@ RailSahayak/
 | `DB_URL` | `jdbc:postgresql://localhost:5432/railsahayak` | PostgreSQL JDBC connection URL |
 | `DB_USERNAME` | `railsahayak` | Database user account |
 | `DB_PASSWORD` | `railsahayak_dev_only` | Database user password |
-| `DEMO_PASSENGER_PASSWORD` | `PassengerDemo123!` | Password for demo passenger account |
-| `DEMO_ADMIN_PASSWORD` | `AdminDemo123!` | Password for demo admin account |
+| `DEMO_PASSENGER_PASSWORD` | `PassengerDemo123!` (or env override) | Password for demo passenger account |
+| `DEMO_ADMIN_PASSWORD` | *[Secure / Environment specific]* | Private administrator evaluation credential |
 | `RAILSAHAYAK_RATE_LIMIT_LIMIT_PER_MINUTE` | `300` | Sliding window rate limit threshold |
 | `RAILSAHAYAK_RATE_LIMIT_TRUST_FORWARDED_FOR` | `false` | Enable only behind trusted reverse proxy |
 

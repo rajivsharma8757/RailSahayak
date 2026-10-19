@@ -26,7 +26,7 @@ The application implements strict Role-Based Access Control (RBAC) via Spring Se
 | **Target Role** | Railway passenger seeking advisory support | Railway customer service / station operations staff |
 | **Access URL** | `/` (Overview, Train Finder, PNR, Payment, Cases) | `/#admin` (Admin Case Console & Audit Logs) |
 | **Demo Username** | `passenger` | `admin` |
-| **Demo Password** | `PassengerDemo123!` | `AdminDemo123!` |
+| **Demo Password** | Configured during setup (or local demo default) | Provided privately to authorized evaluators |
 | **Assigned Authority** | `ROLE_PASSENGER` | `ROLE_ADMIN` |
 | **Data Scope** | User's own submitted support cases only | System-wide case queue, status mutator, and audit trail |
 | **Admin Route Access** | **Blocked (HTTP 403 Forbidden)** | **Granted (HTTP 200 OK)** |
@@ -133,7 +133,7 @@ The repository contains a declarative [`render.yaml`](../render.yaml) blueprint:
 1. Click **Sign out** in the top bar.
 2. Enter the administrator credentials:
    * **Username:** `admin`
-   * **Password:** `AdminDemo123!`
+   * **Password:** Enter the administrator evaluation password provided privately by the project maintainer (or configured via environment variable `DEMO_ADMIN_PASSWORD`).
 3. Click **Connect to backend**.
 4. The top bar updates to `admin · Admin`, and the **Admin Dashboard** navigation item unlocks in the sidebar.
 

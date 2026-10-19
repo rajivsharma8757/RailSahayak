@@ -147,7 +147,7 @@
 
 **Action:**
 1. Scroll up and click **"Sign Out"**.
-2. Click **"Admin Sign In"** (Username: `admin`, Password: `AdminDemo123!`).
+2. Click **"Admin Sign In"** (Username: `admin`, Password: Enter the private evaluation credential provided by the maintainer).
 3. Click **"Sign In"**.
 4. Observe that the navigation bar now displays the **"Admin Operations Console"** with active metric counters (Total Cases, Open, In Progress, Resolved).
 5. Locate the newly created complaint in the Admin Cases queue.

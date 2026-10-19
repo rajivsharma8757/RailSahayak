@@ -13,7 +13,7 @@ services:
       DB_USERNAME: railsahayak
       DB_PASSWORD: railsahayak_dev_only
       DEMO_PASSENGER_PASSWORD: ${DEMO_PASSENGER_PASSWORD:-PassengerDemo123!}
-      DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-AdminDemo123!}
+      DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD}
     depends_on:
       postgres:
         condition: service_healthy

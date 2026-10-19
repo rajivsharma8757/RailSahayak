@@ -33,9 +33,9 @@ services:
       - key: RAILSAHAYAK_RATE_LIMIT_TRUST_FORWARDED_FOR
         value: "true"
       - key: DEMO_PASSENGER_PASSWORD
-        value: "PassengerDemo123!"
+        sync: false
       - key: DEMO_ADMIN_PASSWORD
-        value: "AdminDemo123!"
+        generateValue: true
 
 databases:
   - name: railsahayak-postgres

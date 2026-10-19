@@ -33,7 +33,7 @@ Following the implementation of Step 9 security corrections and proposal validat
 
 ### 1.2 Demo Authentication Hardening (`SecurityConfig.java`)
 - **Externalized Credentials**: In-memory demo credentials resolve from environment variables `DEMO_PASSENGER_PASSWORD` and `DEMO_ADMIN_PASSWORD`.
-- **Fail-Safe Fallbacks**: If environment variables are blank, missing, or whitespace, the application falls back safely to default development passwords (`PassengerDemo123!` and `AdminDemo123!`), ensuring local development workflows are never broken.
+- **Fail-Safe Fallbacks**: If environment variables are blank, missing, or whitespace, the application falls back safely to default development passwords for local evaluation, ensuring local development workflows are never broken.
 - **Loud Startup Security Warning**: If default demo credentials are detected at runtime, the application emits a prominent, framed startup warning banner in the server logs alerting operators that in-memory demo credentials are active and must not be used in production.
 - **Zero Credential Leakage**: Passwords are never logged or exposed in API responses or git repositories.
 
@@ -256,7 +256,7 @@ Refer to the step-by-step presentation script in [`docs/DEMO_SCRIPT.md`](DEMO_SC
 4. **Zero-Trust Payment Help:** Select `Money deducted, ticket not confirmed`, method `UPI`, and enter reference `UPI987654321098`. Observe the instant structured advice, masked reference (`UPI****098`), and RBI TAT settlement guidance. Demonstrate typing `cvv` or a 16-digit card number to show immediate secret rejection.
 5. **PNR Guide Explainer:** Enter sample PNR `2345678901`, status code `RAC`. Demonstrate the heuristic PRS zone explanation, RAC boarding rules, Section 138 waitlist law warnings, and official verification links.
 6. **File Complaint:** Submit a complaint under `Refund follow-up`. Note the generated `RS-XXXXXX` ID and open the interactive Case Timeline modal.
-7. **Sign In as Admin:** Sign out and click **"Admin Sign In"** (`admin` / `AdminDemo123!`). Demonstrate that the Admin Operations Console appears. Update the case status to `IN_PROGRESS` with an investigation note, and inspect the real-time system audit trail table reflecting the transition.
+7. **Sign In as Admin:** Sign out and click **"Admin Sign In"** (`admin` with private evaluation credentials). Demonstrate that the Admin Operations Console appears. Update the case status to `IN_PROGRESS` with an investigation note, and inspect the real-time system audit trail table reflecting the transition.
 
 ---
 

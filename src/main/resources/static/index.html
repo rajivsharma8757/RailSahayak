@@ -104,14 +104,14 @@ function syncRoleUI(){
 }
 
 function loginView(){
-  return `${head("LOCAL BACKEND","Sign in to RailSahayak","Authenticate with the local Spring Boot backend. User roles are verified by the server.",'<span class="badge blue">Secure Server Auth</span>')}
-<div class="grid cols2"><div class="card"><h3>Demo sign-in</h3><form id="loginForm">
+  return `${head("BACKEND ACCESS","Sign in to RailSahayak","Authenticate with the Spring Boot backend. User roles and permissions are enforced by the server.",'<span class="badge blue">Secure Server Auth</span>')}
+<div class="grid cols2"><div class="card"><h3>Reviewer sign-in</h3><form id="loginForm">
 <div class="field"><label for="loginUsername">Username</label><input id="loginUsername" value="passenger" autocomplete="username" required maxlength="80"></div>
 <div class="field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" autocomplete="current-password" required></div>
 <button class="btn primary" type="submit">Connect to backend</button><p id="loginError" role="alert" style="margin-top:12px;color:#b93c46"></p></form>
-<div class="footnote">Passenger: <b>passenger</b> / <code>PassengerDemo123!</code><br>Admin: <b>admin</b> / <code>AdminDemo123!</code><br>Credentials stay in memory only and clear on refresh/sign out.</div></div>
-<div class="card"><h3>Backend connection & persistence</h3><p>Complaint records and audit events are stored persistently in PostgreSQL (Flyway managed).</p>
-<div class="alert warn" style="margin-top:18px"><span>⚡</span><div>Server configured at <b>http://localhost:8081/</b>. Same-origin hosting prevents CORS errors.</div></div>
+<div class="footnote">Passenger: <b>passenger</b> (safe demo evaluation access)<br>Admin: <b>admin</b> (restricted credentials provided privately)<br>Credentials stay in browser session memory only.</div></div>
+<div class="card"><h3>Backend connection & persistence</h3><p>Support records and audit events are stored persistently in PostgreSQL (Flyway managed).</p>
+<div class="alert warn" style="margin-top:18px"><span>⚡</span><div>Connected to backend at <b>${window.location.origin}</b>. Same-origin hosting prevents CORS errors.</div></div>
 <p class="footnote">Railway availability, PNR lookup, payments and refunds are advisory/sample only and do not contact official live railway payment gateways.</p></div></div>`;
 }
 
