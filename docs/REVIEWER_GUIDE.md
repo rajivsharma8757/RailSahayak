@@ -171,7 +171,7 @@ The test suite in [`RailSahayakApplicationTests.java`](../src/test/java/in/rails
 [INFO] BUILD SUCCESS
 ```
 
-### Coverage Matrix
+### 6.1 Test Suite Coverage Matrix
 1. **Public Ingress & Security (Tests 1–4):** Public health check (`/api/v1/health`), unauthenticated request rejection (HTTP 401), passenger authentication.
 2. **RBAC Route Isolation (Tests 5–7):** Rejection of passenger requests to `/api/v1/admin/**` (HTTP 403), admin authorization verification.
 3. **Persistence & Data Isolation (Tests 8–10):** Validation of required fields, multi-turn case creation, cross-user case isolation.
@@ -179,6 +179,40 @@ The test suite in [`RailSahayakApplicationTests.java`](../src/test/java/in/rails
 5. **Train Finder Route Matching (Tests 14–17):** Deterministic route filtering, identical source-destination rejection, date format enforcement.
 6. **Payment Help & Zero-Trust Secret Cleansing (Tests 18–21):** Rejection of 16-digit card numbers, rejection of security keywords (`cvv`, `otp`, `pin`), reference masking.
 7. **Edge Defense & Rate Limiter (Tests 22–29):** Sliding-window rate limiter (HTTP 429 after 300 req/min), proxy header (`X-Forwarded-For`) validation, security headers (`X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`).
+
+### 6.2 Live 15-Endpoint End-to-End Verification Script
+
+Reviewers can also execute the automated live API harness which starts the standalone application with embedded H2 PostgreSQL persistence, probes all 15 public, passenger, admin, and security endpoints, and shuts down cleanly:
+```bash
+python scripts/verify_live_api.py
+```
+**Verified Output:**
+```text
+Starting RailSahayak Spring Boot application...
+Server is UP and responsive!
+======================================================================
+RUNNING LIVE ENDPOINT & DASHBOARD VERIFICATION SUITE
+======================================================================
+[PASS] 1. Public Health Check: HTTP 200 | status: UP | mode: PROTOTYPE
+[PASS] 2. Static Frontend UI: HTTP 200 | Contains 'RailSahayak': True | Length: 88089 bytes
+[PASS] 3. Smart Train Finder: HTTP 200 | Found 1 trains | Train: Sample Howrah Rajdhani Express
+[PASS] 4. PNR Explainer Engine: HTTP 200 | Zone: Northern Zone (New Delhi PRS Server) | Title: Confirmed (CNF)
+[PASS] 5. Payment Secret Blocking (Card PAN): HTTP 400 (Properly Rejected) | Error: Bad Request
+[PASS] 6. Payment Guidance Diagnostic: HTTP 200 | Masked Ref: UPI****210 | Recommendation: WAIT_FOR_SETTLEMENT
+[PASS] 7. Unauthenticated Protection: HTTP 401 (Properly Blocked)
+[PASS] 8. Passenger Authentication (/auth/me): HTTP 200 | User: passenger | Roles: ['ROLE_PASSENGER']
+[PASS] 9. Passenger Case Creation: HTTP 200 | Case ID: RS-512FFA15 | Status: OPEN
+[PASS] 10. Passenger Case Listing: HTTP 200 | Case Count: 1 | Own Cases Verified
+[PASS] 11. RBAC Isolation (Passenger -> Admin): HTTP 403 (Strictly Forbidden for Passenger)
+[PASS] 12. Admin Authentication (/auth/me): HTTP 200 | User: admin | Roles: ['ROLE_ADMIN']
+[PASS] 13. Admin Dashboard Case Retrieval: HTTP 200 | Total Cases in System: 1
+[PASS] 14. Admin Case Status Transition: HTTP 200 | Case RS-512FFA15 updated to IN_PROGRESS
+[PASS] 15. Admin Audit Trail Access: HTTP 200 | Audit Log Entries: 2 | Latest Action: STATUS_CHANGED
+======================================================================
+VERIFICATION COMPLETE: 15/15 Checks Passed.
+======================================================================
+Server stopped cleanly.
+```
 
 ---
 

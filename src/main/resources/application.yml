@@ -4,7 +4,7 @@ spring:
   application:
     name: railsahayak-backend
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/railsahayak}
+    url: ${DB_URL:jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:railsahayak}}
     username: ${DB_USERNAME:railsahayak}
     password: ${DB_PASSWORD:railsahayak_dev_only}
   jpa:
